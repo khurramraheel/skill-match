@@ -1,42 +1,28 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 2px; /* Patla width */
+  border-radius: 20px !important; /* Round edges */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey background */
+  border-radius: 10px !important; /* Round edges */
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+::-webkit-scrollbar-thumb {
+  background: rgb(45, 194, 158); /* Main scrollbar color */
+  border-radius: 20px !important; /* Round edges */
+  transition: background 0.3s ease-in-out !important;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 194, 158, 0.7); /* Light transparent on hover */
 }
 
+/* Firefox */
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+  scrollbar-width: thin; /* Patla scrollbar */
+  scrollbar-color: rgb(45, 194, 158) #f1f1f1;
 }
