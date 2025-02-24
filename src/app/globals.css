@@ -1,0 +1,82 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bs-primary: #2563EB;
+  --bs-secondary: #475569;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles to match SkillMatch design */
+.bg-light {
+  background-color: #F8FAFC !important;
+}
+
+.lead {
+  color: #475569;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.display-4 {
+  color: #0F172A;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+/* Custom Bootstrap utilities */
+.py-md-7 {
+  @media (min-width: 768px) {
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+.hover-lift {
+  transition: all 0.2s ease !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.15), 0 3px 6px -1px rgba(59, 130, 246, 0.1) !important;
+}
