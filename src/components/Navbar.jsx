@@ -56,11 +56,11 @@ const Navbar = () => {
             <Menu size={24} className="text-dark" />
           </button>
 
-          <Link href="/" className="navbar-brand mx-auto mx-lg-0 order-1">
+          <Link href="/" className="navbar-brand mx-auto mb-1 mx-lg-0 order-1">
             <img src="/logo.svg" alt="Logo" className="h-5 w-auto" />
           </Link>
 
-          <div className="collapse navbar-collapse justify-content-center order-2">
+          <div className="collapse mt-2 navbar-collapse justify-content-center order-2">
             <ul className="navbar-nav">
               {links.map((link) => (
                 <li
