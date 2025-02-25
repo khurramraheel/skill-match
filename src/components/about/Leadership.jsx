@@ -37,12 +37,13 @@ export default function Leader() {
             <Image
               src="/about-us/ceo-pic.svg"
               alt="Mirza Usman - CEO"
-              width={200}
-              height={200}
-              className="rounded-circle mb-3 shadow-lg"
+              width={350}
+              height={350}
+              className= " mb-3 shadow-lg"
               style={{
                 objectFit: 'cover',
                 backgroundColor: '#d9d9d9',
+                borderRadius: '10px',
               }}
             />
 
