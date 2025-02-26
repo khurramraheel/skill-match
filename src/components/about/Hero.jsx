@@ -6,12 +6,13 @@ import { HiArrowRight } from 'react-icons/hi';
 export default function Hero() {
   return (
     <section 
-      className="position-relative overflow-hidden"
+      className="position-relative overflow-hidden py-5 py-md-5  px-md-5"
       style={{ 
         backgroundColor: 'rgb(45, 194, 158)',
+        paddingTop: '50px !important',
       }}
     >
-      <div className="container-fluid px-5 px-md-5 py-5 py-md-4">
+      <div className="container-fluid px-5 px-md-5 py-5 py-md-4" style={{ paddingTop: '50px !important',}}>
         <div className="row">
           <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center" style={{ gap: '1rem' }}>
             {/* Left Side */}
@@ -39,14 +40,16 @@ export default function Hero() {
             </div>
 
             {/* Right Side */}
-            <div className="flex-grow-1 ps-0 ps-md-2 mt-4 mt-md-3 col-12 col-md-6">
+            <div className="flex-grow-1  ps-md-4 mt-4 mt-md-3 col-12 col-md-6">
               <div className="d-flex justify-content-start justify-content-md-end">
                 <div>
-                  <p className="mb-4" 
+                  <p className="mb-4 fs-7 pt-5 " 
                      style={{ 
                        color: '#ffffff', 
-                       lineHeight: '1',
-                       fontSize: 'clamp(1.3rem, 1.2vw, 0.9rem)'
+                       lineHeight: '1.1',
+
+                      //  paddingTop: '20px !important', 
+
                      }}
                   >
                     SkillMatch is a pioneering app that specializes in the development and provision 
@@ -54,11 +57,11 @@ export default function Hero() {
                     Founded in 2023, SkillMatch was established to address the growing need for 
                     efficient and accurate candidate assessment tools in today's competitive job market.
                   </p>
-                  <p className="mb-4" 
+                  <p className="mb-4 fs-7" 
                      style={{ 
                        color: '#ffffff', 
-                       lineHeight: '1',
-                       fontSize: 'clamp(1.3rem, 1.2vw, 0.9rem)'
+                       lineHeight: '1'
+                     
                      }}
                   >
                     A state of the art platform which makes the procedure of hiring smooth and quick. 
