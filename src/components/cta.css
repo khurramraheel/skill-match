@@ -1,0 +1,140 @@
+.cta {
+    width: 100%;
+    background-color: rgb(45 194 158);
+    color: white;
+    z-index: 50;
+    text-align: center;
+    padding: 80px 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Rest of your existing CSS remains the same */
+  
+  /* Heading */
+  .cta h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  
+  /* Description */
+  .cta p {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  
+  /* Buttons Container */
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Buttons Styling */
+  .btn-primary,
+  .btn-secondary {
+    padding: 16px 24px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px; /* Ensures both buttons have same width */
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  /* Hover Effects */
+  .btn-primary:hover {
+   background-color: transparent;
+   color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Responsive Grid Fix */
+  @media (max-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+    }
+  
+    .hero-text h1 {
+      font-size: 36px;
+    }
+  
+    .steps-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .company-logos {
+      gap: 20px;
+    }
+  
+    .company-logos img {
+      height: 30px;
+    }
+  
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .cta h2 {
+      font-size: 28px;
+    }
+  
+    .cta-buttons {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  .cta-buttons .btn {
+    border-radius: 30px;
+    width: 202px;
+    height: 60px;
+  }
+   @media (max-width: 576px) {
+    .cta{
+      padding: 2rem 10px !important;
+    }
+    .cta h2{
+      font-size: 20px;
+    }
+    .cta p{
+      font-size: 17px !important;
+    }
+    .cta-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .cta-buttons .btn {
+      border-radius: 30px;
+      min-width: 120px;
+      font-size: 13px;
+      padding: 5px 10px;
+    }
+  }
