@@ -5,15 +5,41 @@ import Link from "next/link";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import TrustedCompanies from "../../components/TrustedCompanies";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Contact = () => {
+  const schema = yup.object({
+    name: yup
+      .string()
+      .min(2, "Name must be at least 2 characters long")
+      .max(50, "Name cannot exceed 50 characters")
+      .matches(/^[a-zA-Z\s]+$/, "Name can only contain letters and spaces")
+      .required("Name is required"),
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    phone: yup
+      .string()
+      .matches(/^\+?[1-9]\d{1,14}$/, "Invalid phone number")
+      .required("Phone number is required"),
+    address: yup
+      .string()
+      .min(5, "Address must be at least 5 characters long")
+      .required("Address is required"),
+    message: yup
+      .string()
+      .min(10, "Message must be at least 10 characters long")
+      .required("Message is required"),
+  });
   const {
     register,
     handleSubmit,
     control,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -22,10 +48,10 @@ const Contact = () => {
 
   return (
     <>
-      <main className="min-h-screen" style={{ backgroundColor: "#2ecc9a" }}>
+      <main className="min-h-screen bg-secondary">
         <div className="container py-5">
           <div className="row">
-            <div className=" col-12 col-lg-6 text-white mt-5">
+            <div className=" col-12 col-lg-6 text-white my-5">
               <h1 className="display-5 mt-4 mb-4 fw-bolder  text-md-start text-center">
                 Get in touch.
               </h1>
@@ -36,8 +62,11 @@ const Contact = () => {
               </p>
               <p className="mb-5 fw-bold">
                 If you&apos;re a current customer looking for support, please
-                contact{" "}
-                <a href="mailto:support@skillmatch.tech" className="text-white">
+                contact
+                <a
+                  href="mailto:support@skillmatch.tech"
+                  className="text-white text-decoration-none"
+                >
                   support@skillmatch.tech
                 </a>
               </p>
@@ -45,30 +74,20 @@ const Contact = () => {
               <div className="mt-5">
                 <h5 className="mb-4">Looking for something else ?</h5>
                 <div className="d-flex flex-column gap-2">
-                  <Link
-                    href="/product"
-                    className="text-white text-decoration-none"
-                  >
+                  <Link href="/" className="text-white text-decoration-none">
                     Product &gt;
                   </Link>
-                  <Link
-                    href="/help"
-                    className="text-white text-decoration-none"
-                  >
+                  <Link href="/" className="text-white text-decoration-none">
                     Help Center &gt;
                   </Link>
-                  <Link
-                    href="/careers"
-                    className="text-white text-decoration-none"
-                  >
+                  <Link href="/" className="text-white text-decoration-none">
                     Careers &gt;
                   </Link>
                 </div>
               </div>
             </div>
-
             <div className="col-12 col-lg-6">
-              <div className="card shadow-lg rounded-3 p-4 border border-dark border-4 rounded-5">
+              <div className="card shadow-lg rounded-4 p-4 border border-dark border-4">
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">
@@ -77,14 +96,16 @@ const Contact = () => {
                     <input
                       id="name"
                       type="text"
-                      className={`form-control py-2 ${
+                      className={`form-control form-control-lg   ${
                         errors.name ? "is-invalid" : ""
                       }`}
-                      placeholder="Enter your name" 
-                      {...register("name", { required: true })}
+                      placeholder="Enter your name"
+                      {...register("name")}
                     />
                     {errors.name && (
-                      <div className="invalid-feedback">Name is required</div>
+                      <div className="invalid-feedback">
+                        {errors.name.message}
+                      </div>
                     )}
                   </div>
 
@@ -95,18 +116,15 @@ const Contact = () => {
                     <input
                       id="email"
                       type="email"
-                      className={`form-control py-2${
+                      className={`form-control form-control-lg${
                         errors.email ? "is-invalid" : ""
                       }`}
                       placeholder="Enter your email"
-                      {...register("email", {
-                        required: true,
-                        pattern: /^\S+@\S+$/i,
-                      })}
+                      {...register("email")}
                     />
                     {errors.email && (
                       <div className="invalid-feedback">
-                        Valid email is required
+                        {errors.email.message}
                       </div>
                     )}
                   </div>
@@ -118,7 +136,6 @@ const Contact = () => {
                     <Controller
                       name="phone"
                       control={control}
-                      rules={{ required: "Phone is required" }}
                       render={({ field: { onChange, value } }) => (
                         <PhoneInput
                           country={"pk"}
@@ -126,12 +143,12 @@ const Contact = () => {
                           onChange={(phone) => onChange(phone)}
                           inputProps={{
                             id: "phone",
-                            className: `form-control w-100 ${
+                            className: `form-control  form-control-lg w-100 ${
                               errors.phone ? "is-invalid" : ""
                             }`,
                           }}
-                          inputClass="py-2"
                           placeholder="Enter your number"
+                          inputStyle={{ backgroundColor: "#efefef" }}
                         />
                       )}
                     />
@@ -149,7 +166,7 @@ const Contact = () => {
                     <input
                       id="address"
                       type="text"
-                      className={`form-control py-2${
+                      className={`form-control form-control-lg${
                         errors.address ? "is-invalid" : ""
                       }`}
                       placeholder="Enter your address"
@@ -168,7 +185,7 @@ const Contact = () => {
                     </label>
                     <textarea
                       id="message"
-                      className={`form-control py-2 ${
+                      className={`form-control form-control-lg ${
                         errors.message ? "is-invalid" : ""
                       }`}
                       rows={4}
@@ -195,7 +212,6 @@ const Contact = () => {
           </div>
         </div>
       </main>
-
       <TrustedCompanies />
     </>
   );
