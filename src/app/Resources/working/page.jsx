@@ -2,7 +2,6 @@
 "use client"
 import Cta from "../../../components/Cta"
 import "./working.css"
-// Import Bootstrap but we'll scope it in our component
 import "bootstrap/dist/css/bootstrap.min.css"
 export default function HowItWorks() {
   return (
