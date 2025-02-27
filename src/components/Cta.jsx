@@ -10,7 +10,7 @@ const Cta = () => {
           <p className="fs-5">Get Started For Free | No credit card needed</p>
       
           <div className="cta-buttons d-flex justify-content-center gap-3 flex-wrap">
-            <button className=" btn-primary  btn-lg px-4 py-2 fw-semibold">
+          <button className="btn custom-btn btn-lg px-4 py-2 fw-semibold">
               Request A Demo
             </button>
             <button className="btn btn-outline-light btn-lg px-4 py-2 fw-semibold">

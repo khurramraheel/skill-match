@@ -31,82 +31,25 @@
     flex-wrap: wrap;
   }
   
-  /* Buttons Styling */
-  .btn-primary
-  {
-    padding: 16px 24px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 180px; 
-    text-align: center;
+  .custom-btn {
+    color: black !important; 
+    background-color: white !important; 
+    border: 2px solid white !important; 
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
     white-space: nowrap;
+    line-height: 1.5;
+    box-sizing: border-box;
   }
   
-  /* Primary Button */
-  .btn-primary {
-    background-color: white;
-    color: black;
-    border: 2px solid white;
+  .custom-btn:hover {
+    color: white !important; 
+    background-color: transparent !important; 
+    border: 2px solid white !important; 
   }
   
-  /* Hover Effects */
-  .btn-primary:hover {
-    background-color:transparent;
-   color: white;
-   border: 2px solid white;
-  }
-  
-   
-  /* Responsive Grid Fix */
-  @media (max-width: 1024px) {
-    .features-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .hero-content {
-      flex-direction: column;
-    }
-  
-    .hero-text h1 {
-      font-size: 36px;
-    }
-  
-    .steps-container {
-      grid-template-columns: 1fr;
-    }
-  
-    .company-logos {
-      gap: 20px;
-    }
-  
-    .company-logos img {
-      height: 30px;
-    }
-  
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .cta h2 {
-      font-size: 28px;
-    }
-  
-    .cta-buttons {
-      justify-content: center;
-      gap: 10px;
-    }
-  }
-  .cta-buttons .btn {
-    border-radius: 30px;
-    width: 202px;
-    height: 60px;
-  }
-   @media (max-width: 576px) {
+  @media (max-width: 576px) {
     .cta{
       padding: 2rem 10px !important;
     }
@@ -128,3 +71,9 @@
       padding: 5px 10px;
     }
   }
+    .cta-buttons .btn {
+      border-radius: 30px;
+      width: 202px;
+      height: 60px;
+    }
+    
