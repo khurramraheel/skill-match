@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 export default function HowItWorks() {
   return (
     <main className="how-it-works mt-5">
-      <div className="bootstrap-scoped">
         {/* Hero Section */}
         <section className="hero">
           <div className="container">
@@ -226,7 +225,6 @@ export default function HowItWorks() {
             </div>
           </div>
         </section>
-      </div>
       <Cta />
     </main>
   )
