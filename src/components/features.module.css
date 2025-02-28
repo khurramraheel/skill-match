@@ -1,0 +1,64 @@
+
+/* Features Section */
+.features {
+    padding: 80px 8.7rem;
+  }
+  .choose {
+    color: rgb(54 113 103);
+    background-color: rgb(224 248 222);
+    width: 6rem;
+    margin-left: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .features h2 {
+    font-weight: bolder;
+    margin-left: 8px;
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  .feature {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .feature h3 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-bottom: 2rem;
+  }
+  .feature p {
+    line-height: 1.2rem;
+    color: black;
+    font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    .features {
+      padding: 5px 10px;
+    }
+    .feature {
+      padding: 0px;
+    }
+    .features h2 {
+      font-size: 28px;
+    }
+    .feature h3 {
+      font-weight: bolder;
+      font-size: 25px;
+      margin-bottom: 0.1rem;
+    }
+    .feature p {
+      line-height: 1.2rem;
+      color: black;
+      font-size: 15px;
+    }
+  }
