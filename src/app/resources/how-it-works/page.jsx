@@ -1,7 +1,7 @@
 
 "use client"
 import Process from "../../../components/Process"
-import Cta from "../../../components/Cta"
+import Cta from "../../../components/how-it-works/Cta"
 import "./working.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Features from "@/components/Features"
