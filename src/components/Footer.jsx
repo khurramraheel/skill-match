@@ -6,7 +6,6 @@ import "./Footer.css"
 const Footer = () => {
   return (
     <footer className="footer-section mt-5">
-      {/* Newsletter Subscription Section */}
       <Container fluid className="py-4">
         <div className="newsletter-container mx-auto">
           <Row className="align-items-center">
