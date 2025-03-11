@@ -5,6 +5,7 @@ import Cta from "../../../components/how-it-works/Cta"
 import "./working.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Features from "@/components/Features"
+import Trust from "@/components/Trust"
 export default function HowItWorks() {
   return (
     <main className="how-it-works mt-5">
@@ -43,29 +44,7 @@ export default function HowItWorks() {
           <h2>Trusted by Fortune 500</h2>
           <h3>companies and global enterprises</h3>
 
-          <div className="container">
-            <div className="row justify-content-center">
-              {/* Company Logos */}
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/vanguard.svg" alt="Vanguard" className="company-logo" />
-              </div>
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/paypal.svg" alt="PayPal" className="company-logo" />
-              </div>
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/united-health.svg" alt="Health" className="company-logo" />
-              </div>
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/deloitte.svg" alt="Deloitte" className="company-logo" />
-              </div>
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/upguard.svg" alt="UpGuard" className="company-logo" />
-              </div>
-              <div className="col-lg-2 col-md-4 col-6 d-flex justify-content-center">
-                <img src="/How-it-works/fy.svg" alt="EY" className="company-logo" />
-              </div>
-            </div>
-          </div>
+          <Trust />
         </section>
 
         {/* Features Section */}
