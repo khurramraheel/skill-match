@@ -1,8 +1,10 @@
-import Image from "next/image";
-
+import React from "react";
+import { HeroSection, HeroDark } from "@/components/home/HeroSection";
 export default function Home() {
   return (
-    <div >
-    </div>
+    <>
+      <HeroSection />
+      <HeroDark />
+    </>
   );
 }
