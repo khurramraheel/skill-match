@@ -66,14 +66,34 @@ export default function Page() {
             <div className='container text-center px-1 my-5'>
                 <h2 className='fw-bold'>We live by our values</h2>
                 <div className='row mt-4'>
-                    <div className='col-md-6 d-flex flex-column align-items-center text-center mb-4'>
+                <div className=' px-0 col-md-6 d-flex flex-column align-items-center text-center mb-4'>
+                        <div className='bg-light rounded-circle p-4 mb-4' style={{ width: '150px', height: '100px' }}>
+                            <img src='/about-us/integrity.svg' alt='Integrity' className='img-fluid' />
+                        </div>
                         <h4 className='fw-bold'>Integrity is everything</h4>
-                        <p className='fs-5'>Through honesty, we earn and maintain trust.</p>
+                        <p className='fs-5'>The scientific rigor of our products is paralleled by the ethical and transparent nature of our people and actions. Through honesty, we earn and maintain trust.</p>
                     </div>
                     <div className='col-md-6 d-flex flex-column align-items-center text-center mb-4'>
+                        <div className='bg-light rounded-circle p-4 mb-4' style={{ width: '150px', height: '100px' }}>
+                            <img src='/about-us/bold.svg' alt='Innovation' className='img-fluid' />
+                        </div>
                         <h4 className='fw-bold'>Be bold and innovate</h4>
-                        <p className='fs-5'>We're actively driving the transformation of our industry.</p>
+                        <p className='fs-5'>Living in such exciting times fuels our courage and creativity. We're not content with just celebrating change; we're actively driving the transformation of our industry.</p>
                     </div>
+                    <div className='col-md-6 d-flex flex-column align-items-center text-center mb-4'>
+                        <div className='bg-light rounded-circle p-4 mb-4' style={{ width: '150px', height: '100px' }}>
+                            <img src='/about-us/team.svg' alt='Innovation' className='img-fluid' />
+                        </div>
+                        <h4 className='fw-bold'>Achieve As a Team</h4>
+                        <p className='fs-5'>We prioritize people and their immense potential, valuing everyone's opinions as we work towards shared goals. By engaging deeply with each other, we aim to create even better products.</p>
+                    </div>
+                    <div className='col-md-6 d-flex flex-column align-items-center text-center mb-4'>
+                        <div className='bg-light rounded-circle p-4 mb-4' style={{ width: '150px', height: '100px' }}>
+                            <img src='/about-us/balance.svg' alt='Innovation' className='img-fluid' />
+                        </div>
+                        <h4 className='fw-bold'>Belief in balance</h4>
+                        <p className='fs-5'>Encouraging wellness and promoting a positive work-life balance leads to healthier, happier individuals, which in turn creates healthier, happier workplaces.</p>           
+                                 </div>
                 </div>
             </div>
 

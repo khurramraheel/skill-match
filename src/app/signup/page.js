@@ -3,6 +3,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/app/custom-bootstrap.scss";
 
+
 export default function SignupForm() {
   const [formData, setFormData] = useState({
     email: "",
@@ -123,7 +124,7 @@ export default function SignupForm() {
             <button type="submit" className="btn btn-success w-100 py-2 fw-bold">Next</button>
           </form>
         </div>
-      </div>
-    </div>
+
+
   );
 }

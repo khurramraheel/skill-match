@@ -1,4 +1,6 @@
 'use client'
+import Link from "next/link";
+import "@/app/globals.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HiArrowRight } from 'react-icons/hi';
@@ -75,12 +77,14 @@ export default function Hero() {
         </div>
 
         <div> 
+          <Link href="/careers">
           <button className="btn p-0 d-inline-flex align-items-center gap-2 text-nowrap" 
                   style={{ color: '#E2E8F0', fontSize: 'clamp(1rem, 1.8vw, 2.9rem)' }}
           >
             Join our team 
             <HiArrowRight size={20} />
           </button>
+          </Link>
         </div>
 
         <div className="row">
