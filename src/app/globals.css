@@ -82,6 +82,24 @@ body {
 }
 
 
+
 .ab{
   background-color: ;
 }
+
+/* Change background color on hover and selection */
+select option {
+  background-color: white; /* Default background */
+  color: black; /* Default text color */
+}
+
+select option:checked,
+select option:hover {
+  background-color: rgb(45 194 158) !important; /* Bootstrap Primary Color */
+  color: white !important; /* White text */
+}
+select option:hover{
+  background-color: rgb(45 194 158) !important; /* Bootstrap Primary Color */
+  color: white !important; /* White text */
+}
+
