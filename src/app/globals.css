@@ -80,3 +80,12 @@ body {
   transform: translateY(-1px) !important;
   box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.15), 0 3px 6px -1px rgba(59, 130, 246, 0.1) !important;
 }
+
+/* 
+
+.left-image img {
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+}
+     */
