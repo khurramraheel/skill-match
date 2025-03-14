@@ -1,6 +1,7 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -20,9 +21,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
-        <Navbar />
-        <main>{children}</main>
+
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+       <Navbar />
+        {children}
+        <Footer/>
+
       </body>
     </html>
   );
