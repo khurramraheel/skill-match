@@ -4,10 +4,14 @@ import './page.css'
 
 export default function Companies() {
     const [isIndustry, setIsIndustry] = useState(true);
+    const [isGrid , setIsGrid] = useState(false);
 
     const toggleIndustry = () => {
-        setIsIndustry(!isIndustry)
-    }
+        setIsIndustry(!isIndustry)}
+
+      const toggleView = ()=>{
+        setIsGrid(!isGrid)
+      } 
     return (
         <div className="main-content container-fluid mb-5">
             <div className='d-flex justify-content-between align-items-start'>
@@ -50,6 +54,10 @@ export default function Companies() {
 
                 <div className='col-md-9 ps-5'>
                     <h3 className='mb-4'>All Companies</h3>
+                    <div>
+                        <button className={`btn ${!isGrid ? "btn-primary" : "btn-light"}`} onClick={()=> setIsGrid(false)}>list</button>
+                        <button className={`btn ${isGrid ? "btn-primary" : "btn-light"} ms-2`} onClick={()=> setIsGrid(true)}>Grid</button>
+                    </div>
 
                     {[
                         { logo: "/companies/netixsol.png", name: "Netixsol Web3Geeks", category: "Information Technology (IT)", description: "We're at the forefront of blockchain technology. As a dedicated blockchain development company, we specialize in crafting secure, decentralized ..." , job:17 },
