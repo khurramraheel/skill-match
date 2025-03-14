@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react';
+
 import './page.css'
 
 export default function Companies() {
@@ -62,7 +63,7 @@ export default function Companies() {
                 </div>
 
                 <div className='col-md-9 ps-5'>
-                    <h3 className='mb-4'>All Companies</h3>
+                    <h3 className='mb-3'>All Companies</h3>
                     <div className='d-flex justify-content-end me-5 mb-4'>
                         <button className={`btn ${!isGrid ? "btn-primary" : "btn-light"}`} onClick={toggleView}>List</button>
                         <button className={`btn ${isGrid ? "btn-primary" : "btn-light"} ms-2`} onClick={toggleView }>Grid</button>
@@ -84,7 +85,7 @@ export default function Companies() {
                                     {company.description ? (
                                         <p className='p-2 mb-5'>{company.description}</p>
                                     ) : (
-                                        <div className='mb-5'></div> /* Placeholder to maintain spacing */
+                                        <div className='mb-5'></div> 
                                     )}
 
                                     <div className="mt-auto">
