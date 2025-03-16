@@ -15,7 +15,7 @@ const Navbar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
-    { name: "Find Jobs", path: "/find-jobs" },
+    { name: "Find Jobs", path: "/jobs" },
     { name: "Browse Companies", path: "/browse-companies" },
     { name: "Pricing", path: "/pricing" },
     { name: "Resources", path: "#", dropdown: true },
