@@ -1,7 +1,7 @@
 "use client"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap"
-import "@/components/footer.css"
+import "@/components/Footer.css"
 
 const Footer = () => {
   return (
