@@ -119,7 +119,7 @@ const Navbar = () => {
             <Link href="/login">
               <button className="btn login-btn rounded-pill px-4">Login</button>
             </Link>
-            <Link href="/start-free-trial">
+            <Link href="/signup">
               <button className="btn trial-btn rounded-pill px-4">
                 Start Free Trial
               </button>
