@@ -7,6 +7,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+
 export default function LoginForm() {
 
 
@@ -17,7 +18,7 @@ export default function LoginForm() {
     try {
       console.log("Sending Password:", data.password); // Debugging
   
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data), // ✅ Ensure correct payload
@@ -25,18 +26,14 @@ export default function LoginForm() {
   
       const result = await response.json();
       console.log("Server Response:", result); // Debugging
-      
-     if(response.ok){
-       toast.success(result.message||"Login successful!")
-
-     }else{
-
-       toast.error(result.error||"user not found")
-     }
-
-
+      if (response.ok) {
+        toast.success(result.message || "Registration successful!");
+      } else {
+        toast.error(result.error || "Something went wrong!");
+      }
     } catch (error) {
       console.error("Fetch Error:", error);
+      toast.error("Something went wrong!");
     }
   };
   
@@ -58,7 +55,7 @@ export default function LoginForm() {
 
   return (
     <div className="mt-2"> 
-    <ToastContainer ></ToastContainer>
+     <ToastContainer position="top-right" autoClose={3000} hideProgressBar ></ToastContainer>
     <div className=" vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop:"5rem!important" }}>
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
@@ -87,7 +84,7 @@ export default function LoginForm() {
            
               <input
                   type="email"
-                  className={`form-control p-3 `}
+                  className={`form-control p-2 `}
                
                  {...register("email",{
                   required:{
@@ -103,7 +100,7 @@ export default function LoginForm() {
               <span className="text-danger">*</span></label>
               <input
                 type="password"
-             className={`form-control p-3`}
+             className={`form-control p-2`}
                
         
                 {...register("password",{
