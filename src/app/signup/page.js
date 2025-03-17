@@ -49,10 +49,12 @@ export default function SignupForm() {
     <div className="vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop: "5rem" }}>
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
+
         <div className="col-md-5 bg-primary d-none d-md-block p-0" style={{ backgroundImage: "url(/auth-cover.svg)", backgroundSize: "cover", backgroundPosition: "center" }}></div>
 
         {/* Right Side Form */}
         <div className="col-md-6 p-5 mx-5">
+
           <h2 className="fw-bold">Sign Up To Your Account</h2>
           <p className="text-muted">Already have an account? <a href="#" className="text-decoration-none">Sign in</a></p>
           
@@ -74,7 +76,9 @@ export default function SignupForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+
                 required
+
                 style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
               />
               <div className="invalid-feedback">{errors.email}</div>
@@ -102,7 +106,9 @@ export default function SignupForm() {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                required
+
+                required 
+
                 style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
               />
               <div className="invalid-feedback">{errors.confirmPassword}</div>
@@ -114,7 +120,9 @@ export default function SignupForm() {
                 className={`form-check-input ${errors.agreed ? "is-invalid" : ""}`}
                 name="agreed"
                 checked={formData.agreed}
-                onChange={handleChange}
+
+                onChange={handleChange} 
+
                 style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
               />
               <label className="form-check-label">I agree to the <a href="#" className="text-decoration-none">Terms & Conditions</a></label>
