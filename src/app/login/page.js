@@ -15,28 +15,28 @@ export default function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      console.log("Sending Password:", data.password); // Debugging
+      // console.log("Sending Password:", data.password); // Debugging
   
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data), // ✅ Ensure correct payload
+        body: JSON.stringify({
+            action: "login", 
+            email: data.email,
+            password: data.password,
+          }),
       });
   
       const result = await response.json();
       console.log("Server Response:", result); // Debugging
-      
-     if(response.ok){
-       toast.success(result.message||"Login successful!")
-
-     }else{
-
-       toast.error(result.error||"user not found")
-     }
-
-
+      if (response.ok) {
+        toast.success(result.message || "Registration successful!");
+      } else {
+        toast.error(result.error || "Something went wrong!");
+      }
     } catch (error) {
       console.error("Fetch Error:", error);
+      toast.error("Something went wrong!");
     }
   };
   
@@ -58,7 +58,7 @@ export default function LoginForm() {
 
   return (
     <div className="mt-2"> 
-    <ToastContainer ></ToastContainer>
+     <ToastContainer position="top-center" autoClose={3000} hideProgressBar ></ToastContainer>
     <div className=" vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop:"5rem!important" }}>
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
@@ -93,7 +93,11 @@ export default function LoginForm() {
                   required:{
                     value:true,
                     message:"Email is required",
-                  }})}
+                  },pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[cC][oO][mM]$/, // ✅ Must contain @ and end with .com
+                    message: "Only .com emails are allowed",
+                  }
+                })}
               />
               <p className="text-danger">{errors.email?.message}</p>
             </div>
@@ -109,13 +113,15 @@ export default function LoginForm() {
                 {...register("password",{
                   required:{
                     value:true,
-                    message:"Password is required",
-                  }})}
+                    message:"Password is required"
+                    
+                  }
+                })}
               />
              <p className="text-danger">{errors.password?.message}</p>
             </div>
 
-           <div className="text-end my-2 " >
+           <div className="text-end my-3 " >
             <a className="text-muted text-black fs-5" style={{textDecoration: "none"}}
             href="#"> Forgot password?</a >
            </div>
@@ -124,7 +130,7 @@ export default function LoginForm() {
 
             <button type="submit" className="btn btn-success w-100 py-2 fw-normal rounded-4 fs-4 shadow p-3 mb-5" style={{height:"60px"}}>Login</button>
 
-            <div className="text-muted pt-1">By Signing in, you are agreeing to our <a href="#" className="text-muted">Terms and Conditions</a> and <a href="#" className="text-muted">Privacy Policy</a>.</div>
+            <div className="text-muted pt-3">By Signing in, you are agreeing to our <a href="#" className="text-muted">Terms and Conditions</a> and <a href="#" className="text-muted">Privacy Policy</a>.</div>
           </form>
         </div>
       </div>
