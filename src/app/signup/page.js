@@ -2,131 +2,115 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/app/custom-bootstrap.scss";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 export default function SignupForm() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-    agreed: false,
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+      agreed: false,
+    }
   });
 
-  const [errors, setErrors] = useState({});
+  const onSubmit =async (data) => {
+    try {
+      console.log("Sending Password:", data.password); // Debugging
+  
+      const response = await fetch("/api/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "register", 
+            email: data.email,
+            password: data.password,
+          }),
+      });
+  
+  
+   const result = await response.json();
+        console.log("Server Response:", result); // Debugging
+        if (response.ok) {
+          toast.success(result.message || "Registration successful!");
+        } else {
+          toast.error(result.error || "Something went wrong!");
+        }
+      } catch (error) {
+        console.error("Fetch Error:", error);
+        toast.error("Something went wrong!");
+      }
+    };
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let newErrors = {};
-
-    if (!formData.email.includes("@")) {
-      newErrors.email = "Enter a valid email!";
-    }
-    if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters!";
-    }
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match!";
-    }
-    if (!formData.agreed) {
-      newErrors.agreed = "You must accept the terms!";
-    }
-
-    setErrors(newErrors);
-
-    if (Object.keys(newErrors).length === 0) {
-      alert("Signup Successful!");
-    }
-  };
 
   return (
     <div className="vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop: "5rem" }}>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
-        {/* Left Side Image */}
-
         <div className="col-md-5 bg-primary d-none d-md-block p-0" style={{ backgroundImage: "url(/auth-cover.svg)", backgroundSize: "cover", backgroundPosition: "center" }}></div>
-
-        {/* Right Side Form */}
         <div className="col-md-6 p-5 mx-5">
-
           <h2 className="fw-bold">Sign Up To Your Account</h2>
           <p className="text-muted">Already have an account? <a href="#" className="text-decoration-none">Sign in</a></p>
           
-          <div className="d-flex gap-2 mb-4">
-            <button className="btn fs-5 border-secondary rounded-pill py-2 w-50 d-flex align-items-center justify-content-center">
-              <img src="/google-icon.svg" alt="Google" className="me-2" style={{ width: "20px" }} /> Sign up with Google
-            </button>
-            <button className="btn border-secondary w-50 d-flex py-2 align-items-center rounded-pill justify-content-center fs-5">
-              <img src="/github-icon.svg" alt="Github" className="me-2" style={{ width: "20px" }} /> Sign up with Github
-            </button>
-          </div>
-          
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-3">
               <label className="form-label fw-semibold">Your Email</label>
               <input
                 type="email"
-                className={`form-control p-2 ${errors.email ? "is-invalid" : ""}`}
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-
-                required
-
-                style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
+                className="form-control p-2"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[cC][oO][mM]$/,
+                    message: "Only .com emails are allowed",
+                  },
+                })}
               />
-              <div className="invalid-feedback">{errors.email}</div>
+              <p className="text-danger">{errors.email?.message}</p>
             </div>
 
             <div className="mb-3">
               <label className="form-label fw-semibold">Your Password</label>
               <input
                 type="password"
-                className={`form-control p-2 ${errors.password ? "is-invalid" : ""}`}
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-                style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
+                className="form-control p-2"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                })}
               />
-              <div className="invalid-feedback">{errors.password}</div>
+              <p className="text-danger">{errors.password?.message}</p>
             </div>
 
             <div className="mb-3">
               <label className="form-label fw-semibold">Confirm Password</label>
               <input
                 type="password"
-                className={`form-control p-2 ${errors.confirmPassword ? "is-invalid" : ""}`}
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-
-                required 
-
-                style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
+                className="form-control p-2"
+                {...register("confirmPassword", {
+                  required: "Confirm Password is required",
+                  validate: (value) => value === document.querySelector("input[name='password']").value || "Passwords do not match!",
+                })}
               />
-              <div className="invalid-feedback">{errors.confirmPassword}</div>
+              <p className="text-danger">{errors.confirmPassword?.message}</p>
             </div>
 
             <div className="form-check mb-3">
               <input
                 type="checkbox"
-                className={`form-check-input ${errors.agreed ? "is-invalid" : ""}`}
-                name="agreed"
-                checked={formData.agreed}
-
-                onChange={handleChange} 
-
-                style={{ backgroundColor: "rgb(239, 239, 239)", border: "1px solid grey" }}
+                className="form-check-input"
+                {...register("agreed", {
+                  required: "You must accept the terms!",
+                })}
               />
               <label className="form-check-label">I agree to the <a href="#" className="text-decoration-none">Terms & Conditions</a></label>
-              <div className="invalid-feedback">{errors.agreed}</div>
+              <p className="text-danger">{errors.agreed?.message}</p>
             </div>
 
             <button type="submit" className="btn btn-success w-100 py-2 fw-bold">Next</button>
