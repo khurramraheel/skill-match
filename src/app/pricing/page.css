@@ -1,0 +1,465 @@
+/* Green header */
+.green-header {
+    background-color: rgb(45, 194, 158);
+    padding-top: 65px;
+  }
+  
+  /* Lead text inside the header */
+  .lead {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .pb-4 {
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Main heading */
+  .main-heading {
+    font-size: 2.5rem;
+    white-space: nowrap;
+  }
+  
+  /* Pricing Tabs - Make completely static */
+  .pricing-tabs {
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    padding: 10px 10px 1px;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    width: 100%;
+    position: static; /* Change to static */
+    height: auto; /* Auto height */
+    overflow: visible; /* Show overflow */
+  }
+  
+  /* Button Styling - Make all buttons identical in size */
+  .pricing-btn {
+    padding: 10px 24px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    min-width: 136px;
+    border-radius: 6px;
+    border: none;
+    background-color: transparent;
+    transition: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px; /* All buttons same height */
+    cursor: pointer;
+    position: static; /* Change to static */
+    margin: 0;
+  }
+  
+  /* Active (Selected) Button - Only change color, not size or position */
+  .pricing-btn.active {
+    background-color: rgb(45, 194, 158);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    /* Keep same height as other buttons */
+    height: 46px;
+    width: 136px;
+    /* Remove positioning */
+    position: static;
+    top: auto;
+    transition: none;
+  }
+  
+  .pricing-btn:focus {
+    outline: none;
+  }
+  
+  /* Pricing column - add more gap between cards */
+  .pricing-column {
+    padding: 30px 20px; /* Increased horizontal padding for more gap */
+    width: 25rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Pricing Cards - fixed height to ensure alignment and remove hover effects */
+  .pricing-card {
+    background-color: #f8f9fa;
+    border-radius: 16px; /* Reduced from 28px */
+    border: none;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    flex: 1; /* Take up all available space */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Remove any transitions or animations that might cause movement */
+    transition: none;
+    transform: none;
+    /* Prevent any hover effects */
+    will-change: auto;
+  }
+  
+  /* Explicitly disable hover effects */
+  .pricing-card:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Keep the same shadow on hover */
+    margin-top: 2rem; /* Keep the same margin on hover */
+    position: relative; /* Keep the same position on hover */
+    top: 0;
+    left: 0;
+  }
+  
+  /* Top border for cards - match new border radius */
+  .top-border {
+    background-color: rgb(54 113 103);
+    height: 4px;
+    width: 101%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 16px; /* Match card border radius */
+    border-top-right-radius: 16px; /* Match card border radius */
+  }
+  
+  /* Popular banner wrapper - adjusted to attach directly to card */
+  .popular-banner-wrapper {
+    position: absolute;
+    top: 34px; /* Match the top padding of pricing-column */
+    left: 20px; /* Match the left padding of pricing-column */
+    right: 20px; /* Match the right padding of pricing-column */
+    z-index: 2;
+  }
+  
+  /* Popular banner adjustments */
+  .popular-banner {
+    background-color: rgb(54 113 103);
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    width: 100%;
+    border-top-left-radius: 16px; /* Match card border radius */
+    border-top-right-radius: 16px; /* Match card border radius */
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  /* Card content wrapper - adjust padding for alignment */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take up all available space */
+    padding: 1.5rem 0rem 0rem;
+  }
+  
+  /* Popular card specific adjustments - reduce top padding to align separator */
+  .pricing-card.popular .card-content {
+    padding-top: 0.5rem; /* Same as other cards */
+  }
+  
+  /* Plan name */
+  .pricing-card h3 {
+    font-size: 1.95rem;
+    font-weight: 700;
+  }
+  
+  /* Subtitle */
+  .subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  /* Price text */
+  .price-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+  
+  /* Remove extra margin from the popular card */
+  .pricing-card.popular {
+    margin-top: 2rem; /* Same as other cards since banner is outside */
+    padding-top: 1rem; /* Add padding to account for the banner */
+  }
+  
+  /* White star icon */
+  .star-icon {
+    color: white;
+    fill: currentColor;
+  }
+  
+  /* Adjust spacing after separator */
+  .separator {
+    border-bottom: 1px solid rgb(212 212 216);
+    width: 100%;
+    margin: 1.5rem 0 1.75rem;
+  }
+  
+  /* Plan includes heading */
+  .plan-includes {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Update features section styles */
+  .features-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+  
+  /* Features list adjustments */
+  .features-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take up all available space */
+  }
+  
+  /* Adjust list item spacing */
+  .features-list li {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Add spacers to ensure equal height */
+  .card-spacer {
+    flex-grow: 1;
+    min-height: 10px;
+  }
+  
+  /* Check icon */
+  .check-icon {
+    color: rgb(98, 208, 102);
+    margin-top: 2px;
+  }
+  
+  /* Feature text */
+  .feature-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+  }
+  
+  /* Row container to ensure equal height */
+  .equal-height-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+  }
+  
+  /* Features comparison section */
+  .features-comparison-container {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0 8rem;
+  }
+  
+  .features-comparison {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Features name heading */
+  .features-name {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0;
+  }
+  
+  .features-name-col {
+    padding-right: 1rem;
+  }
+  
+  /* Plan name in comparison section */
+  .plan-name {
+    font-size: 1.45rem;
+    font-weight: 650;
+    color: #212529;
+    margin-bottom: 0.25rem;
+    text-align: left;
+  }
+  
+  /* Plan subtitle in comparison section */
+  .plan-subtitle {
+    font-size: 1.20rem;
+    color: #6c757d;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .plan-details-col {
+    padding-right: 1rem;
+  }
+  
+  /* Features separator line */
+  .features-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #dee2e6;
+    margin: 1.5rem 0 2rem;
+  }
+  
+  /* Mobile plan tabs for responsive design */
+  .mobile-plan-tabs {
+    margin: 2rem auto;
+    max-width: 90%;
+    display: none;
+  }
+  
+  .mobile-tabs-container {
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .mobile-tab-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    background-color: white;
+    color: #212529;
+    cursor: pointer;
+  }
+  
+  .mobile-tab-btn.active {
+    background-color: rgb(45, 194, 158);
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1199.98px) {
+    .pricing-column {
+      padding: 15px 12px; /* Adjusted padding for better spacing */
+    }
+  
+    .popular-banner-wrapper {
+      left: 12px;
+      right: 12px;
+      top: 19px; /* Adjusted to match new padding */
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .main-heading {
+      font-size: 1.8rem;
+    }
+  
+    .pricing-btn {
+      padding: 10px 15px;
+      font-size: 1.2rem;
+      min-width: 120px;
+      height: 46px; /* Keep consistent height */
+    }
+  
+    .pricing-btn.active {
+      width: 120px;
+      height: 46px; /* Keep consistent height */
+    }
+  
+    .pricing-column {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 15px 10px; /* Adjusted padding */
+      width: 100%; /* Full width on smaller screens */
+    }
+  
+    .popular-banner-wrapper {
+      left: 10px;
+      right: 10px;
+      top: 19px;
+    }
+  
+    /* Ensure cards have proper spacing on smaller screens */
+    .row.g-4 {
+      margin: 0 -10px;
+    }
+  
+    /* Adjust features comparison for smaller screens */
+    .features-name,
+    .plan-name {
+      font-size: 1.1rem;
+    }
+  
+    .plan-subtitle {
+      font-size: 0.85rem;
+    }
+  
+    /* Show mobile tabs on medium screens */
+    .mobile-plan-tabs {
+      display: block;
+    }
+  
+    /* Hide features comparison on medium and small screens */
+    .features-comparison-container {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .main-heading {
+      font-size: 1.5rem;
+      white-space: normal;
+    }
+  
+    .pricing-btn {
+      padding: 8px 12px;
+      font-size: 1rem;
+      min-width: 100px;
+      height: 40px;
+    }
+  
+    .pricing-btn.active {
+      height: 40px; /* Keep consistent with other buttons */
+      width: 100px;
+    }
+  
+    .pricing-column {
+      max-width: 350px;
+      padding: 10px 8px; /* Further reduced padding */
+    }
+  
+    .popular-banner-wrapper {
+      left: 8px;
+      right: 8px;
+      top: 14px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .pricing-column {
+      max-width: 320px;
+      padding: 8px 5px; /* Minimal padding on very small screens */
+    }
+  
+    .popular-banner-wrapper {
+      left: 5px;
+      right: 5px;
+      top: 12px;
+    }
+  
+    .mobile-plan-tabs {
+      margin: 1.5rem auto;
+    }
+  
+    .mobile-tab-btn {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  
