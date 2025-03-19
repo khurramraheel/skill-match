@@ -123,7 +123,7 @@ export default function LoginForm() {
 
            <div className="text-end my-3 " >
             <a className="text-muted text-black fs-5" style={{textDecoration: "none"}}
-            href="#"> Forgot password?</a >
+            href="/forgot-password"> Forgot password?</a >
            </div>
 
        
