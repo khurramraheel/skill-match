@@ -62,9 +62,28 @@ export default function LoginForm() {
     <div className=" vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop:"5rem!important" }}>
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
-        <div className="col-md-5 bg-primary d-none d-md-block p-0" style={{ backgroundImage: "url(/images/auth-cover.svg)" , backgroundSize: "cover", backgroundPosition: "center"}}>
-         <div className="text-center"><h1>bibibbjb</h1></div>
-        </div>
+        <div
+            className="col-md-5 bg-primary d-none d-md-block p-0"
+            style={{
+              backgroundImage: "url(/images/auth-cover.svg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+              
+            }}
+          >
+                   <h1 className=" text-center fw-semibold text-white " 
+              >SkillMatch</h1>
+
+
+              <p className="fs-5 text-center fw-semibold text-white " style={{marginBottom:"0px"}}
+              >Asses Advance Achieve: Your path to </p>
+                <p className=" fs-5 text-center fw-semibold text-white leading-none " style={{marginTop:"-9px"}}> Engineering Exillence</p>
+          </div>
 
         {/* Right Side Form */}
         <div className="col-md-6 p-5 mx-5">  
@@ -123,12 +142,12 @@ export default function LoginForm() {
 
            <div className="text-end my-3 " >
             <a className="text-muted text-black fs-5" style={{textDecoration: "none"}}
-            href="#"> Forgot password?</a >
+            href="/forgot-password"> Forgot password?</a >
            </div>
 
        
 
-            <button type="submit" className="btn btn-success w-100 py-2 fw-normal rounded-4 fs-4 shadow p-3 mb-5" style={{height:"60px"}}>Login</button>
+            <button type="submit" className="btn btn-success w-100 py-2 fw-normal rounded-4 fs-4 shadow p-3 " style={{height:"60px"}}>Login</button>
 
             <div className="text-muted pt-3">By Signing in, you are agreeing to our <a href="#" className="text-muted">Terms and Conditions</a> and <a href="#" className="text-muted">Privacy Policy</a>.</div>
           </form>

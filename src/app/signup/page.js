@@ -48,9 +48,30 @@ export default function SignupForm() {
 
   return (
     <div className="vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop: "5rem" }}>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
-        <div className="col-md-5 bg-primary d-none d-md-block p-0" style={{ backgroundImage: "url(/auth-cover.svg)", backgroundSize: "cover", backgroundPosition: "center" }}></div>
+      <div
+            className="col-md-5 bg-primary d-none d-md-block p-0"
+            style={{
+              backgroundImage: "url(/images/auth-cover.svg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+              
+            }}
+          >
+                   <h1 className=" text-center font-urbanist fw-semibold text-white " 
+              >SkillMatch</h1>
+
+
+              <p className="fs-5 text-center fw-semibold text-white " style={{marginBottom:"0px"}}
+              >Asses Advance Achieve: Your path to </p>
+                <p className=" fs-5 text-center fw-semibold text-white leading-none " style={{marginTop:"-9px"}}> Engineering Exillence</p>
+          </div>
         <div className="col-md-6 p-5 mx-5">
           <h2 className="fw-bold">Sign Up To Your Account</h2>
           <p className="text-muted">Already have an account? <a href="#" className="text-decoration-none">Sign in</a></p>
@@ -60,7 +81,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Your Email</label>
               <input
                 type="email"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -76,7 +97,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Your Password</label>
               <input
                 type="password"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -92,7 +113,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Confirm Password</label>
               <input
                 type="password"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("confirmPassword", {
                   required: "Confirm Password is required",
                   validate: (value) => value === document.querySelector("input[name='password']").value || "Passwords do not match!",
@@ -101,10 +122,10 @@ export default function SignupForm() {
               <p className="text-danger">{errors.confirmPassword?.message}</p>
             </div>
 
-            <div className="form-check mb-3">
+            <div className="form-check ">
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-check-input "
                 {...register("agreed", {
                   required: "You must accept the terms!",
                 })}
