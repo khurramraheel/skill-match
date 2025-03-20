@@ -3,7 +3,7 @@
 import { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Check, Star } from 'lucide-react'
-import "./page.css"
+import "@/app/pricing/page.css"
 
 export default function PricingPage() {
   const [activePlan, setActivePlan] = useState("Monthly")

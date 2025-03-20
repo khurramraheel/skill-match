@@ -18,12 +18,9 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "framer-motion": "^12.4.7",
-
-    "lucide-react": "^0.479.0",
-
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.479.0",
     "mongoose": "^8.12.1",
-
     "next": "15.1.7",
     "next-auth": "^4.24.11",
     "nodemailer": "^6.10.0",
