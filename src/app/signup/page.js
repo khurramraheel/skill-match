@@ -104,7 +104,7 @@ export default function SignupForm() {
             <div className="form-check mb-3">
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-check-input "
                 {...register("agreed", {
                   required: "You must accept the terms!",
                 })}
