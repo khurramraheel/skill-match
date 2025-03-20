@@ -60,7 +60,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Your Email</label>
               <input
                 type="email"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -76,7 +76,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Your Password</label>
               <input
                 type="password"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -92,7 +92,7 @@ export default function SignupForm() {
               <label className="form-label fw-semibold">Confirm Password</label>
               <input
                 type="password"
-                className="form-control p-2"
+                className="form-control p-3"
                 {...register("confirmPassword", {
                   required: "Confirm Password is required",
                   validate: (value) => value === document.querySelector("input[name='password']").value || "Passwords do not match!",
@@ -101,7 +101,7 @@ export default function SignupForm() {
               <p className="text-danger">{errors.confirmPassword?.message}</p>
             </div>
 
-            <div className="form-check mb-3">
+            <div className="form-check ">
               <input
                 type="checkbox"
                 className="form-check-input "
