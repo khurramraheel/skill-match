@@ -64,6 +64,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    /* Added for Nest Hub fix */
+    min-width: 300px;
+    flex: 1 0 30%;
   }
   .pricing-card {
     background-color: #f8f9fa;
@@ -120,7 +123,7 @@
     justify-content: center;
     gap: 5px;
   }
-
+  
   .card-content {
     display: flex;
     flex-direction: column;
@@ -130,7 +133,7 @@
   .pricing-card.popular .card-content {
     padding-top: 0.5rem; 
   }
-
+  
   .pricing-card h3 {
     font-size: 1.95rem;
     font-weight: 700;
@@ -189,7 +192,7 @@
     flex-grow: 1;
     min-height: 10px;
   }
- 
+  
   .check-icon {
     color: rgb(98, 208, 102);
     margin-top: 2px;
@@ -200,11 +203,13 @@
     line-height: 1.5;
     color: #212529;
   }
-
+  
   .equal-height-row {
     display: flex;
     flex-wrap: wrap;
     margin-top: 4rem;
+    /* Added for Nest Hub fix */
+    justify-content: space-around;
   }
   .features-comparison-container {
     margin-top: 4rem;
@@ -227,7 +232,7 @@
   .features-name-col {
     padding-right: 1rem;
   }
-
+  
   .plan-name {
     font-size: 1.45rem;
     font-weight: 650;
@@ -297,6 +302,28 @@
       top: 19px; /* Adjusted to match new padding */
     }
   }
+  
+  /* Added specific media query for Nest Hub screens */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .pricing-column {
+      padding: 15px 10px;
+      /* Reduce width to fit three cards in one row */
+      width: auto;
+      min-width: 280px;
+    }
+    
+    .pricing-card {
+      /* Reduce horizontal padding to save space */
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    
+    .features-section {
+      /* Reduce left margin to save space */
+      margin-left: 1.5rem;
+    }
+  }
+  
   @media (max-width: 991.98px) {
     .main-heading {
       font-size: 1.8rem;
@@ -388,5 +415,3 @@
       font-size: 0.9rem;
     }
   }
-  
-  

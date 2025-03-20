@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Check, Star } from "lucide-react"
+import { Check, Star } from 'lucide-react'
 import "./page.css"
 
 export default function PricingPage() {
@@ -198,4 +198,3 @@ export default function PricingPage() {
     </div>
   )
 }
-
