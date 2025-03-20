@@ -15,7 +15,7 @@ const Navbar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
-    { name: "Find Jobs", path: "/find-jobs" },
+    { name: "Find Jobs", path: "/jobs" },
     { name: "Browse Companies", path: "/browse-companies" },
     { name: "Pricing", path: "/pricing" },
     { name: "Resources", path: "#", dropdown: true },
@@ -119,7 +119,7 @@ const Navbar = () => {
             <Link href="/login">
               <button className="btn login-btn rounded-pill px-4">Login</button>
             </Link>
-            <Link href="/start-free-trial">
+            <Link href="/signup">
               <button className="btn trial-btn rounded-pill px-4">
                 Start Free Trial
               </button>

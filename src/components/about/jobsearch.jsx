@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-
+// import"@/app/globals.css";
 export default function JobSearchBar() {
   return (
     <div className="container py-4">
