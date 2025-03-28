@@ -4,7 +4,7 @@ import { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Check, Star } from 'lucide-react'
 import "./page.css"
-
+import Pricing from "@/components/sub-pricing/pricing"
 export default function PricingPage() {
   const [activePlan, setActivePlan] = useState("Monthly")
   const [activeMobileTab, setActiveMobileTab] = useState(0)
@@ -90,7 +90,7 @@ export default function PricingPage() {
       <div className="green-header">
         <div className="container text-center text-white">
           <div className="pt-5 pb-4">
-            <h1 className="fw-bold mb-3 main-heading">Choose the plan that's right for you</h1>
+            <h2 className="fw-bold mb-3 main-heading">Choose the plan that's right for you</h2>
             <p className="lead mb-0">All of our plans are customized to fit the needs of small and large teams.</p>
           </div>
         </div>
@@ -194,6 +194,7 @@ export default function PricingPage() {
           </div>
           <div className="features-separator"></div>
         </div>
+        <Pricing/>
       </div>
     </div>
   )
