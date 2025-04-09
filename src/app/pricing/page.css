@@ -1,3 +1,7 @@
+.mt-5{
+  padding: 3.5rem;
+  padding-top: 0rem;
+}
 .green-header {
     background-color: rgb(45, 194, 158);
     padding-top: 65px;
@@ -10,8 +14,8 @@
     padding-bottom: 3rem !important;
   }
   .main-heading {
-    font-size: 2.5rem;
-    white-space: nowrap;
+    font-size: 3rem;
+    
   }
   .pricing-tabs {
     background-color: white;
@@ -67,6 +71,7 @@
     /* Added for Nest Hub fix */
     min-width: 300px;
     flex: 1 0 30%;
+  
   }
   .pricing-card {
     background-color: #f8f9fa;
@@ -249,14 +254,14 @@
   }
   
   .plan-details-col {
-    padding-right: 1rem;
+    padding-right: 2rem;
   }
   
   .features-separator {
     width: 100%;
     height: 1px;
     background-color: #dee2e6;
-    margin: 1.5rem 0 2rem;
+    margin: 2.5rem 0 2rem;
   }
   
   .mobile-plan-tabs {
@@ -317,13 +322,11 @@
       padding-left: 0.5rem;
       padding-right: 0.5rem;
     }
-    
     .features-section {
       /* Reduce left margin to save space */
       margin-left: 1.5rem;
     }
   }
-  
   @media (max-width: 991.98px) {
     .main-heading {
       font-size: 1.8rem;
@@ -337,7 +340,7 @@
     }
   
     .pricing-btn.active {
-      width: 120px;
+      width: 124px;
       height: 46px; /* Keep consistent height */
     }
   
@@ -377,11 +380,18 @@
       font-size: 1.5rem;
       white-space: normal;
     }
+    .pricing-tabs {
+      width: 100%;
+      flex-wrap: nowrap;
+      padding-bottom: 5px; 
+    }
+    
     .pricing-btn {
-      padding: 8px 12px;
+      padding: 10px 8px;
       font-size: 1rem;
-      min-width: 100px;
+      min-width: auto;
       height: 40px;
+      flex-wrap: nowrap;
     }
     .pricing-btn.active {
       height: 40px; /* Keep consistent with other buttons */
@@ -415,3 +425,9 @@
       font-size: 0.9rem;
     }
   }
+  @media (max-width: 991.98px) {
+    .mt-5 {
+      padding: 0 !important;
+    }
+  }
+

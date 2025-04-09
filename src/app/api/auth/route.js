@@ -1,8 +1,9 @@
 import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/db";
-import User from "@/model/user";
+
 import jwt from "jsonwebtoken";
 import { sendResetEmail } from "@/app/utils/emailService"; // ✅ Ensure this function exists
+import User from "@/model/user";
 
 
 
