@@ -14,18 +14,7 @@ export default function page() {
       <div className='' style={{ padding: "50px 170px 30px 170px" }}>
         <p className='fs-5 fw-semibold w-80'>Welcome to SkillMatch. By using our platform, website, and services, you agree to comply with and be bound by the following Terms and Conditions. Please read these terms carefully before accessing or using our services.</p>
         <ol className='fw-bold fs-2'>
-          <li>Acceptance of Terms</li>
-          <p className='fs-5 fw-medium'>By accessing or using SkillMatch, you agree to these Terms and Conditions. If you do not agree to these terms, you should not use our platform. We reserve the right to update these terms at any time, and your continued use of the site signifies your acceptance of any changes.</p>
-          <li>Eligibility</li>
-          <p className='fs-5 fw-medium'>You must be at least 18 years of age to use our platform. By using SkillMatch, you represent and warrant that you have the legal capacity to enter into a binding agreement.</p>
-          <li>Account Registration</li>
-          <ul className='fs-5 fw-medium py-3'>
-            <li>You must create an account to access certain features on SkillMatch.</li>
-            <li>You agree to provide accurate, current, and complete information during the registration process.</li>
-            <li>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</li>
-          </ul>
-          <li>Use of Services</li>
-          <p className='fs-5 mt-3 fw-medium'>SkillMatch provides job listings, candidate assessments, and recruitment services. You agree to use our platform for lawful purposes only and in compliance with all applicable laws and regulations.</p>
+          <li>Acceptance of Terms</li> vides job listings, candidate assessments, and recruitment services. You agree to use our platform for lawful purposes only and in compliance with all applicable laws and regulations.</p>
           <h5 className='py-4 fw-bold'>4.1 User Conduct:</h5>
           <h5>You agree not to:</h5>
           <ul className='fs-5 fw-medium mt-4 '>
