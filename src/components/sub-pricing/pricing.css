@@ -1,0 +1,153 @@
+.pricing-features-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .category-section {
+    margin-bottom: 40px;
+  }
+  
+  .category-header {
+    padding: 15px 0;
+    margin-bottom: 10px;
+  }
+  
+  .category-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #212529;
+  }
+  .features-table {
+    width: 100%;
+  }
+  .feature-row {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .feature-row:nth-child(odd) {
+    background-color: #f8f9fa;
+  }
+  .feature-row:nth-child(even) {
+    background-color: #fff;
+  }
+  .feature-name {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #212529;
+  }
+  .feature-value {
+    width: 27%;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .feature-value.mobile {
+    flex: 1;
+  }
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .features-comparison-container {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0px 0rem;
+}
+  /* Mobile Plan Tabs */
+  .pricing-mobile-tabs {
+    margin: 20px 0;
+    width: 100%;
+  }
+  .pricing-tabs-container {
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pricing-tab-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    background-color: #f8f9fa;
+    color: #212529;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pricing-tab-btn.active {
+    background-color: #2dc29e;
+    color: white;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 991.98px) {
+    .feature-name {
+      flex: 2;
+    }
+  
+    .feature-value:not(.mobile) {
+      display: none;
+    }
+    .mobile-plan-tabs {
+      display: none !important;
+    }
+  
+    /* Show our mobile tabs */
+    .pricing-mobile-tabs {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .pricing-mobile-tabs {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .category-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .feature-name,
+    .feature-value {
+      padding: 12px 15px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .pricing-features-container {
+      padding: 0 10px;
+    }
+  
+    .category-header h2 {
+      font-size: 1.2rem;
+    }
+  
+    .feature-name,
+    .feature-value {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .pricing-tab-btn {
+      padding: 10px 5px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  
