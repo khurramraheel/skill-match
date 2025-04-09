@@ -3,8 +3,10 @@
 import { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Check, Star } from 'lucide-react'
+
 import "./page.css"
 import Pricing from "@/components/sub-pricing/pricing"
+
 export default function PricingPage() {
   const [activePlan, setActivePlan] = useState("Monthly")
   const [activeMobileTab, setActiveMobileTab] = useState(0)

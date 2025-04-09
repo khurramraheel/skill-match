@@ -153,10 +153,10 @@ const Footer = () => {
             <Col md={6}>
               <div className="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center">
                 <div className="footer-bottom-links">
-                  <a href="#" className="footer-link me-4">
+                  <a href="/terms-and-conditions" className="footer-link me-4">
                     Terms of Services
                   </a>
-                  <a href="#" className="footer-link me-4">
+                  <a href="/privacy-policy" className="footer-link me-4">
                     Privacy Policy
                   </a>
                   <a href="#" className="footer-link me-4">
