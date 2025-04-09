@@ -1,29 +1,56 @@
 "use client"
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { BsBorder, BsBorderAll, BsGlobeAmericas } from "react-icons/bs";
 import "@/app/custom-bootstrap.scss";
 import './page.css'
 
 export default function Companies() {
+
+    let [companies, setCompanies] = useState([]); // ✅ Correct way
+
+
+      useEffect(() => {
+            fetch("/api/companiesJob")
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("Fetched Data:", data);  
+                    setCompanies(data);
+                })
+                .catch((error) => console.error("Error fetching companies:", error));
+        }, []);
     const [isIndustry, setIsIndustry] = useState(true);
     const [isGrid, setIsGrid] = useState(false);
+    const [selectedIndustries, setSelectedIndustries] = useState([]);
+    
+
 
     const toggleIndustry = () => setIsIndustry(!isIndustry);
     const toggleView = () => setIsGrid(!isGrid);
 
-    const companies = [
-        { logo: "/companies/netixsol.png", name: "Netixsol Web3Geeks", category: "Information Technology (IT)", description: "We're at the forefront of blockchain technology. As a dedicated blockchain development company, we specialize in crafting secure, decentralized ..." , job: 17 },
-        { logo: "/companies/blankprofile.png", name: "PrimeHRMS", category: "Information Technology (IT)", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "BlocTech Solutions", category: "Information Technology (IT)", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "Digital Usama", category: "Marketing", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "belgianairways", category: "Retail", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "Arthur Lawrence Business & IT Services", category: "Consulting", job: 0 },
-        { logo: "/companies/ranksoal.png", name: "RankSol", category: "Information Technology (IT)", description: "RankSol is a leading software development and digital solutions company, offering cutting-edge IT services since 2009. W...", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "UNIAL", category: "Information Technology (IT)", job: 1 },
-        { logo: "/companies/blankprofile.png", name: "Indus Home", category: "Manufacturing", job: 0 },
-        { logo: "/companies/blankprofile.png", name: "Demo Company", category: "Information Technology (IT)", job: 0 }
-    ];
 
+
+    // Industry toggle function
+    const handleIndustryChange = (industry) => {
+        setSelectedIndustries((prevSelected) =>
+            prevSelected.includes(industry)
+                ? prevSelected.filter((item) => item !== industry) // Unselect
+                : [...prevSelected, industry] // Select
+        );
+    };
+    
+
+
+
+
+   
+    const filteredCompanies = selectedIndustries.length > 0
+    ? companies.filter(company => 
+        selectedIndustries.some(industry => company.industry?.includes(industry))
+    )
+    : companies;
+
+  
+    
     return (
         <div className="main-content container-fluid mb-5 px-0">  <div className="bg-primary  d-flex flex-column align-items-center justify-content-center px-5 " style={{ height: '79vh!important' }}>
         <h1 className="text-white">Find your dream Companies </h1>
@@ -64,7 +91,7 @@ export default function Companies() {
               <option value="" >GERMANY</option>
             </select></div>
             </div>
-  
+               
           <div className='d-flex  align-items-center justify-content-center col-md-3 col-xs-3'> <img
             src="/find-jobs/location.svg"
             alt="" />
@@ -115,11 +142,17 @@ export default function Companies() {
                                 "Media"
                             ].map((industry, index) => (
                                 <li key={index} className='form-check mb-3'>
-                                    <label className='form-check-label'>
-                                        <input className='form-check-input' type='checkbox' />
-                                        {industry}
-                                    </label>
-                                </li>
+                                <label className='form-check-label'>
+                                    <input
+                                        className='form-check-input'
+                                        type='checkbox'
+                                        value={industry}
+                                        onChange={() => handleIndustryChange(industry)}
+                                        checked={selectedIndustries.includes(industry)}
+                                    />
+                                    {industry}
+                                </label>
+                            </li>
                             ))}
                         </ul>
                     )}
@@ -133,36 +166,40 @@ export default function Companies() {
                     </div>
 
                     <div className={`row ${isGrid ? 'g-5' : 'flex-column'}`}>
-                        {companies.map((company, index) => (
+                     {filteredCompanies.length > 0 ? (
+                        filteredCompanies.map((company, index) => (
                             <div key={index} className={`${isGrid ? 'col-md-6' : ''}`}>
                                 <div className='position-relative border p-3 my-4 d-flex flex-column' 
-                                  style={{ minHeight: '300px', maxWidth: '800px', padding: '10px' }}
+                                  style={{ minHeight: '300px', maxWidth: '950px', padding: '10px' }}
 >
 
                                     <span className='position-absolute top-0 end-0 mt-4 me-4 p-2 fs-6 badge bg-gray border' style={{ color: "#2dc29e" }}>
                                         {company.job} Jobs
                                     </span>
-                                    <img src={company.logo} alt={company.name} className='ms-2 my-2' height="90" width="90" />
-                                    <h4 className='ms-2'>{company.name}</h4>
+                                    <img src={company.logo} alt={company.name} className='ms-2 my-2 ' height="90" width="90" />
+                                    <h3 className='ms-2  fw-bold mt-2'>{company.name}</h3>
 
                                     {company.description ? (
-                                        <p className='p-2 mb-5'>{company.description}</p>
+                                        <p className='p-2 mb-2 fs-4 fw-light'>{company.description}</p>
                                     ) : (
-                                        <div className='mb-5'></div> 
+                                        <div className='mb-2'></div> 
                                     )}
 
                                     <div className="mt-auto">
                                         <span className='border border-warning px-2 py-1 rounded-pill text-warning ms-2'>
-                                            <b>{company.category}</b>
+                                            <b>{company.needs}</b>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        ))
+                    ) : (
+                        <h1 class="fw-bold" >No Company Found</h1> 
+                   ) }
                     </div>
 
                 </div>
             </div>
         </div></div>
     );
-}
+}   //   agr Information Technology flexbox py click ho to only Netixsol Web3Geeks company show ho baki na ho..
