@@ -2,6 +2,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Mysterious from "@/components/Mysterious";
 
 export default function RootLayout({ children }) {
   return (
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
 
       <body >
        <Navbar />
+       <Mysterious/>
         {children}
         <Footer/>
 
