@@ -8,7 +8,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid"> 
       <div className="row">
         {/* Sidebar */}
         <nav className="col-md-3 col-lg-2 d-md-block bg-dark text-white sidebar p-3">

@@ -1,18 +1,12 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar";
+// import { GeistSans } from 'geist/font/sans';
 
-import "../styles/styles.scss"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
+
+
 import Footer from "@/components/Footer";
 import Mysterious from "@/components/Mysterious";
 
