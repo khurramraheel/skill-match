@@ -1,0 +1,19 @@
+.active-faq {
+  border-right: 4px solid #198754 !important;
+}
+
+.faq-icon {
+  transition: all 0.3s ease;
+}
+
+.faq-icon.active img {
+  filter: invert(32%) sepia(98%) saturate(1043%) hue-rotate(127deg) brightness(96%) contrast(101%);
+}
+
+.card-header:hover {
+  background-color: #f8f9fa !important;
+}
+
+.active-header {
+  background-color: #f8f9fa !important;
+}

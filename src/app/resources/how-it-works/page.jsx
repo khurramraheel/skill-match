@@ -50,6 +50,7 @@ export default function HowItWorks() {
         {/* Features Section */}
         <Features/>
       <Cta />
+      
     </main>
   )
 }

@@ -6,6 +6,7 @@ import { Check, Star } from 'lucide-react'
 
 import "./page.css"
 import Pricing from "@/components/sub-pricing/pricing"
+import FAQ from "@/components/PricingFAQ"
 
 export default function PricingPage() {
   const [activePlan, setActivePlan] = useState("Monthly")
@@ -92,8 +93,13 @@ export default function PricingPage() {
       <div className="green-header">
         <div className="container text-center text-white">
           <div className="pt-5 pb-4">
-            <h2 className="fw-bold mb-3 main-heading">Choose the plan that's right for you</h2>
-            <p className="lead mb-0">All of our plans are customized to fit the needs of small and large teams.</p>
+            <h2 className="fw-bold mb-3 main-heading">
+              Choose the plan that's right for you
+            </h2>
+            <p className="lead mb-0">
+              All of our plans are customized to fit the needs of small and
+              large teams.
+            </p>
           </div>
         </div>
 
@@ -101,15 +107,19 @@ export default function PricingPage() {
           <div className="row justify-content-center">
             <div className="col-auto">
               <div className="pricing-tabs">
-                {["Monthly", "Quarterly", "Biannually", "Annually"].map((plan) => (
-                  <button
-                    key={plan}
-                    className={`btn pricing-btn ${activePlan === plan ? "active" : ""}`}
-                    onClick={() => handlePlanChange(plan)}
-                  >
-                    {plan}
-                  </button>
-                ))}
+                {["Monthly", "Quarterly", "Biannually", "Annually"].map(
+                  (plan) => (
+                    <button
+                      key={plan}
+                      className={`btn pricing-btn ${
+                        activePlan === plan ? "active" : ""
+                      }`}
+                      onClick={() => handlePlanChange(plan)}
+                    >
+                      {plan}
+                    </button>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -128,13 +138,19 @@ export default function PricingPage() {
                   </div>
                 </div>
               )}
-              <div className={`card pricing-card ${plan.popular ? "popular" : ""}`}>
+              <div
+                className={`card pricing-card ${plan.popular ? "popular" : ""}`}
+              >
                 {!plan.popular && <div className="top-border" />}
 
                 <div className="card-content">
-                  <div className={plan.popular ? "popular-content-wrapper" : ""}>
+                  <div
+                    className={plan.popular ? "popular-content-wrapper" : ""}
+                  >
                     <h3 className="text-center mb-1">{plan.name}</h3>
-                    <p className="text-center text-muted subtitle mb-4">{plan.subtitle}</p>
+                    <p className="text-center text-muted subtitle mb-4">
+                      {plan.subtitle}
+                    </p>
                     <h2 className="text-center price-text mb-4">TBD</h2>
                   </div>
                   <div className="separator"></div>
@@ -144,35 +160,47 @@ export default function PricingPage() {
                     <ul className="list-unstyled features-list">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="d-flex align-items-start mb-3">
-                          <Check className="text-success me-2 flex-shrink-0 check-icon" size={20} />
+                          <Check
+                            className="text-success me-2 flex-shrink-0 check-icon"
+                            size={20}
+                          />
                           <span className="feature-text">
-                            {feature.text.split(feature.highlight || "").map((part, i, arr) => (
-                              <span key={i}>
-                                {part}
-                                {i < arr.length - 1 && <span className="fw-bold">{feature.highlight}</span>}
-                              </span>
-                            ))}
+                            {feature.text
+                              .split(feature.highlight || "")
+                              .map((part, i, arr) => (
+                                <span key={i}>
+                                  {part}
+                                  {i < arr.length - 1 && (
+                                    <span className="fw-bold">
+                                      {feature.highlight}
+                                    </span>
+                                  )}
+                                </span>
+                              ))}
                           </span>
                         </li>
                       ))}
                     </ul>
 
                     {/* Add invisible spacer items to ensure equal height */}
-                    {plan.features.length < maxFeatures && <div className="card-spacer"></div>}
+                    {plan.features.length < maxFeatures && (
+                      <div className="card-spacer"></div>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
         {/* Mobile tabs - visible on medium and small screens */}
         <div className="mobile-plan-tabs">
           <div className="mobile-tabs-container">
             {plans.map((plan, index) => (
               <button
                 key={index}
-                className={`mobile-tab-btn ${activeMobileTab === index ? "active" : ""}`}
+                className={`mobile-tab-btn ${
+                  activeMobileTab === index ? "active" : ""
+                }`}
                 onClick={() => handleMobileTabChange(index)}
               >
                 {plan.name.replace(" Plan", "").replace(" plan", "")}
@@ -180,7 +208,6 @@ export default function PricingPage() {
             ))}
           </div>
         </div>
-
         {/* Features comparison section - visible on all screens */}
         <div className="features-comparison-container mt-5">
           <div className="row features-comparison">
@@ -188,7 +215,10 @@ export default function PricingPage() {
               <h4 className="features-name">Features name</h4>
             </div>
             {plans.map((plan, index) => (
-              <div key={index} className="col-lg-3 col-md-3 col-sm-3 plan-details-col">
+              <div
+                key={index}
+                className="col-lg-3 col-md-3 col-sm-3 plan-details-col"
+              >
                 <h4 className="plan-name">{plan.name}</h4>
                 <p className="plan-subtitle">{plan.subtitle}</p>
               </div>
@@ -196,8 +226,9 @@ export default function PricingPage() {
           </div>
           <div className="features-separator"></div>
         </div>
-        <Pricing/>
+        <Pricing />
+        <FAQ />
       </div>
     </div>
-  )
+  );
 }
