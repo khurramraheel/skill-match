@@ -5,41 +5,18 @@ import Link from "next/link";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import TrustedCompanies from "../../components/TrustedCompanies";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { vector1, vector2 } from "../../../public/contact";
+import Image from "next/image";
+import styles from "./page.module.css";
 
 const Contact = () => {
-  const schema = yup.object({
-    name: yup
-      .string()
-      .min(2, "Name must be at least 2 characters long")
-      .max(50, "Name cannot exceed 50 characters")
-      .matches(/^[a-zA-Z\s]+$/, "Name can only contain letters and spaces")
-      .required("Name is required"),
-    email: yup
-      .string()
-      .email("Invalid email format")
-      .required("Email is required"),
-    phone: yup
-      .string()
-      .matches(/^\+?[1-9]\d{1,14}$/, "Invalid phone number")
-      .required("Phone number is required"),
-    address: yup
-      .string()
-      .min(5, "Address must be at least 5 characters long")
-      .required("Address is required"),
-    message: yup
-      .string()
-      .min(10, "Message must be at least 10 characters long")
-      .required("Message is required"),
-  });
   const {
     register,
     handleSubmit,
     control,
     reset,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -47,12 +24,37 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <main className="min-h-screen bg-secondary">
+    <div>
+      <style jsx global>{`
+        .form-control:focus {
+          border-color: #ced4da;
+          box-shadow: none;
+        }
+        .form-control.is-invalid:focus {
+          border-color: #dc3545;
+          box-shadow: none;
+        }
+        .react-tel-input .form-control:focus {
+          border-color: #ced4da !important;
+          box-shadow: none !important;
+        }
+        .react-tel-input .selected-flag:focus {
+          background-color: transparent !important;
+        }
+        .react-tel-input .selected-flag:hover {
+          background-color: transparent !important;
+        }
+      `}</style>
+      <main
+        className="min-h-screen "
+        style={{ backgroundColor: "rgb(45, 194, 158)" }}
+      >
         <div className="container py-5">
           <div className="row">
-            <div className=" col-12 col-lg-6 text-white my-5">
-              <h1 className="display-5 mt-4 mb-4 fw-bolder  text-md-start text-center">
+            <div className=" col-xs-12 col-md-6 text-white my-5">
+              <h1
+                className={`mt-4 mb-4  text-center text-md-start ${styles.responsiveText}`}
+              >
                 Get in touch.
               </h1>
               <p className="mb-4 fw-bold">
@@ -86,8 +88,25 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-6">
-              <div className="card shadow-lg rounded-4 p-4 border border-dark border-4">
+            <div className="col-12 col-md-6 position-relative">
+              <div
+                className="position-absoulute"
+                style={{ transform: "rotate(1.7deg)" }}
+              >
+                <Image
+                  src={vector1}
+                  alt="Vector Image 1"
+                  className="h-10 mt-4"
+                  style={{ transform: "rotate(5deg)" }}
+                />
+                <Image
+                  src={vector2}
+                  alt="Vector Image2"
+                  className="mt-2 "
+                  style={{ transform: "rotate(1deg)" }}
+                />
+              </div>
+              <div className=" ms-5  mt-1 card shadow-lg rounded-top-4 p-4 border border-dark border-4">
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">
@@ -96,11 +115,20 @@ const Contact = () => {
                     <input
                       id="name"
                       type="text"
-                      className={`form-control form-control-lg   ${
+                      className={`form-control form-control-lg ${
                         errors.name ? "is-invalid" : ""
                       }`}
                       placeholder="Enter your name"
-                      {...register("name")}
+                      {...register("name", {
+                        required: {
+                          value: true,
+                          message: "Name is required",
+                        },
+                        minLength: {
+                          value: 3,
+                          message: "Name is too Short",
+                        },
+                      })}
                     />
                     {errors.name && (
                       <div className="invalid-feedback">
@@ -116,11 +144,21 @@ const Contact = () => {
                     <input
                       id="email"
                       type="email"
-                      className={`form-control form-control-lg${
+                      className={`form-control form-control-lg ${
                         errors.email ? "is-invalid" : ""
                       }`}
                       placeholder="Enter your email"
-                      {...register("email")}
+                      {...register("email", {
+                        required: {
+                          value: true,
+                          message: "Email is required",
+                        },
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                          message: "Please enter a valid email",
+                        },
+                      })}
                     />
                     {errors.email && (
                       <div className="invalid-feedback">
@@ -136,6 +174,13 @@ const Contact = () => {
                     <Controller
                       name="phone"
                       control={control}
+                      rules={{
+                        required: "Phone number is required",
+                        pattern: {
+                          value: /^\+?[1-9]\d{1,14}$/,
+                          message: "Invalid phone number",
+                        },
+                      }}
                       render={({ field: { onChange, value } }) => (
                         <PhoneInput
                           country={"pk"}
@@ -143,12 +188,27 @@ const Contact = () => {
                           onChange={(phone) => onChange(phone)}
                           inputProps={{
                             id: "phone",
-                            className: `form-control  form-control-lg w-100 ${
+                            className: `form-control form-control-lg w-100 ${
                               errors.phone ? "is-invalid" : ""
                             }`,
                           }}
+                          containerClass="mb-0"
                           placeholder="Enter your number"
-                          inputStyle={{ backgroundColor: "#efefef" }}
+                          inputStyle={{
+                            width: "100%",
+                            height: "48px",
+                            fontSize: "1.25rem",
+                            backgroundColor: "white",
+                            border: "1px solid #ced4da",
+                          }}
+                          buttonStyle={{
+                            backgroundColor: "white",
+                            border: "1px solid #ced4da",
+                            borderRight: "none",
+                          }}
+                          dropdownStyle={{
+                            width: "300px",
+                          }}
                         />
                       )}
                     />
@@ -166,15 +226,24 @@ const Contact = () => {
                     <input
                       id="address"
                       type="text"
-                      className={`form-control form-control-lg${
+                      className={`form-control form-control-lg ${
                         errors.address ? "is-invalid" : ""
                       }`}
                       placeholder="Enter your address"
-                      {...register("address", { required: true })}
+                      {...register("address", {
+                        required: {
+                          value: true,
+                          message: "Address is Required",
+                        },
+                        minLength: {
+                          value: 5,
+                          message: "Address is too short",
+                        },
+                      })}
                     />
                     {errors.address && (
                       <div className="invalid-feedback">
-                        Address is required
+                        {errors.address.message}
                       </div>
                     )}
                   </div>
@@ -190,11 +259,16 @@ const Contact = () => {
                       }`}
                       rows={4}
                       placeholder="Type a message"
-                      {...register("message", { required: true })}
+                      {...register("message", {
+                        required: {
+                          value: true,
+                          message: "Message is required",
+                        },
+                      })}
                     ></textarea>
                     {errors.message && (
                       <div className="invalid-feedback">
-                        Message is required
+                        {errors.message.message}
                       </div>
                     )}
                   </div>
@@ -207,13 +281,31 @@ const Contact = () => {
                     Contact Us
                   </button>
                 </form>
+                <div
+                  className="position-absolute bg-black rounded-2 "
+                  style={{
+                    width: "calc(100% + 120px)",
+                    height: "4px",
+                    left: "-60px",
+                    bottom: "-4px",
+                  }}
+                ></div>
+                <div
+                  className="position-absolute bg-black rounded-2"
+                  style={{
+                    width: "60px",
+                    height: "4px",
+                    left: "-140px",
+                    bottom: "-4px",
+                  }}
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </main>
       <TrustedCompanies />
-    </>
+    </div>
   );
 };
 
