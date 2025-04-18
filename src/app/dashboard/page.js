@@ -37,7 +37,7 @@ export default function DashboardPage() {
 
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid"> 
       <div className="row">
         {/* Sidebar */}
     

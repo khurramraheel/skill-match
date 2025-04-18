@@ -2,11 +2,18 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar";
+// import { GeistSans } from 'geist/font/sans';
+
+
+
+
+
 import Footer from "@/components/Footer";
 import Mysterious from "@/components/Mysterious";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { SessionProvider } from "next-auth/react";
+
 
 
 export default function RootLayout({ children }) {
