@@ -106,3 +106,20 @@ select option:hover{
 }
 
 
+.sidebar .nav-link {
+  transition: all 0.3s ease;
+  border-radius: 20.75rem; /* soft rounded corners */
+  padding: 10px 16px;
+  margin: 4px 0;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #1F9C89; /* light white bg */
+  color: #f6f8f9 !important; /* light black (Bootstrap dark gray) */
+}
+
+
+.sidebar .nav-link.active {
+  background-color: #336E63;
+  color: #fff !important;
+}

@@ -6,13 +6,13 @@ export async function POST(req) {
     try {
         await connectDB(); // ✅ Database se pehle connect ho
 
-        const { logo, description, title,needs } = await req.json();
+        const { logo, description, title,needs, userId } = await req.json();
    
         const newCompany = new Company({
             logo,
             description,
-           title,
-         
+            title,
+            owner:userId,
             needs
         });
 

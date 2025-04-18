@@ -45,6 +45,12 @@ export async function POST(req) {
         return Response.json({
           message: "Login successful!",
           token,
+          user: {
+            email: user.email,
+       
+            id: user._id,
+          }
+      
         });
       }
 
@@ -116,7 +122,7 @@ return Response.json({ message: "Password reset successfully! You can now log in
         
         // Send Reset Email
     
-        console.log("Reset link:", resetLink);
+        console.log("Reset link:", resetLink);d
         console.log("Sending email to:", user.email);
         
         try {

@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const JobSchema = new mongoose.Schema({
+  owner:{
+    ref:"User",
+    type:mongoose.SchemaTypes.ObjectId
+  },
   logo: { type: String, required: true },
   description: { type: String, required: true },
   name: { type: String, required:true, }, 

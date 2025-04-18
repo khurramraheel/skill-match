@@ -9,4 +9,5 @@ const JobSchema = new mongoose.Schema({
   company: { type: mongoose.Schema.Types.ObjectId, ref: "Company", required: true } // Relational Reference
 });
 
+
 export default mongoose.models.Job || mongoose.model("Job", JobSchema);

@@ -59,6 +59,11 @@ export default function Hero() {
 
         <div className='col-md-2 col-xs-2'><button className='rounded-pill p-2 bg-primary text-white fw-bold border-0' style={{ width: '100px' }}>Search</button></div>
       </div>
+
+
+
+
+      
       <div className='row px-5 vw-100 text-white  mt-2 '><div className='col-5'>
           <p className=''>Popular : UI Designer, UX Researcher, Android, Admin</p>
         </div><div className='col-md-1 col-xs-1'></div>
