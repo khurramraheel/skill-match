@@ -47,7 +47,7 @@ export default function SignupForm() {
 
 
   return (
-    <div className="vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop: "5rem" }}>
+    <div className="vw-100  d-flex align-items-center justify-content-center" >
       <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
       <div

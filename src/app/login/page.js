@@ -81,9 +81,9 @@ export default function LoginForm() {
 
   return (
 
-    <div className="mt-2"> 
+    <div > 
      <ToastContainer position="top-center" autoClose={3000} hideProgressBar ></ToastContainer>
-    <div className=" vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop:"5rem!important" }}>
+    <div className=" vw-100  d-flex align-items-center justify-content-center">
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
         <div
