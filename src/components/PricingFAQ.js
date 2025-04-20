@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { faqData } from "../../public/PrincingFAQsAssests";
 import Image from "next/image";
-import styles from "./PricingFAQ.module.css"; // Importing the CSS module
+import styles from "./PricingFAQ.module.css";
 
 const FAQ = () => {
   const [activeId, setActiveId] = useState(null);
