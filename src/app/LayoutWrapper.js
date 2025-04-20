@@ -10,7 +10,7 @@ export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
   
   // Add all routes where you DON'T want the Navbar
-  const excludedRoutes = ["/dashboard","/login","/signUp","/dashboard/findjobs","/dashboard/brse-companies"];
+  const excludedRoutes = ["/dashboard","/login","/signup","/dashboard/findjobs","/dashboard/brse-companies"];
   const showNavbar = !excludedRoutes.includes(pathname);
 
   return (
