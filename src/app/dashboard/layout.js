@@ -2,12 +2,14 @@
 "use client";
 
 import { useEffect } from "react";
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 
 export default function DashboardLayout({ children }) {
   useEffect(() => {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
+   
   }, []);
 
   return (
@@ -16,7 +18,7 @@ export default function DashboardLayout({ children }) {
         {/* Sidebar */}
           
         <nav className="col-md-3 col-lg-2 d-md-block  bg-light bg-gradient sidebar p-0">
-        <img className="ms-2"
+        <img className="ms-2 ms-4 mt-4"
   src="/logo.svg"
   alt="Logo"
   style={{ height: "28px", width: "173px" }}
@@ -24,22 +26,22 @@ export default function DashboardLayout({ children }) {
   <ul className="nav flex-column mt-5">
     <li className="nav-item">
    
-      <Link className={"nav-link text-dark mt-2 fw-medium fs-5 rounded-start-circle "} href="/dashboard">   <i class="bi bi-house-door me-3 ms-3"></i>Dashboard</Link>
+      <Link className={"nav-link text-dark mt-2 text-body-secondary  fw-medium fs-5 rounded-start-circle "} href="/dashboard">   <i className="bi bi-house-door me-3 ms-3"></i>Dashboard</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link text-dark mt-2 fw-medium fs-5 rounded-start-circle " href="/dashboard/findjobs">  <i class="bi bi-search me-3 ms-3"></i>Find Jobs</Link>
+      <Link className="nav-link text-dark mt-2 text-body-secondary  fw-medium fs-5 rounded-start-circle " href="/dashboard/findjobs">  <i className="bi bi-search me-3 ms-3"></i>Find Jobs</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link text-dark mt-2 fw-medium fs-5  rounded-start-circle" href="/dashboard/brse-companies"> <i class="bi bi-window-fullscreen me-3 ms-3"></i>Browse Compny</Link>
+      <Link className="nav-link text-dark mt-2 text-body-secondary  fw-medium fs-5  rounded-start-circle" href="/dashboard/brse-companies"> <i className="bi bi-window-fullscreen me-3 ms-3"></i>Browse Compny</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link text-dark mt-2 fw-medium fs-5  rounded-start-circle" href=""> <i class="bi bi-person-fill  me-3 ms-3"></i>My Profile</Link>
+      <Link className="nav-link text-dark mt-2 text-body-secondary  fw-medium fs-5  rounded-start-circle" href=""> <i className="bi bi-person-fill  me-3 ms-3"></i>My Profile</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link text-dark mt-2 fw-medium fs-5  rounded-start-circle" href=""> <i class="bi bi-gear me-3 ms-3"></i>Setting</Link>
+      <Link className="nav-link text-dark mt-2  text-body-secondary fw-medium fs-5  rounded-start-circle" href=""> <i className="bi bi-gear me-3 ms-3"></i>Setting</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link text-dark mt-2 fw-medium fs-5  rounded-start-circle" href=""> <i class="bi bi-question-circle  me-3 ms-3"></i>Help Center?</Link>
+      <Link className="nav-link text-dark text-body-secondary mt-2 fw-medium fs-5  rounded-start-circle" href=""> <i className="bi bi-question-circle  me-3 ms-3"></i>Help Center?</Link>
     </li>
   </ul>
 </nav>

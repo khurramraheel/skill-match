@@ -1,24 +1,30 @@
 "use client";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 // import { GeistSans } from 'geist/font/sans';
 
 
 
 
 
-import Footer from "@/components/Footer";
-import Mysterious from "@/components/Mysterious";
+// import Footer from "@/components/Footer";
+// import Mysterious from "@/components/Mysterious";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { SessionProvider } from "next-auth/react";
+import LayoutWrapper from "./LayoutWrapper";
+// import { usePathname } from "next/navigation";
 
 
 
 export default function RootLayout({ children }) {
+  
+
+
   return (
     <html lang="en">
+
       <head>
         {/* Bootstrap Icons */}
         <link
@@ -41,15 +47,15 @@ export default function RootLayout({ children }) {
       
 
       <body >
-       <Navbar />
+    
        <SessionProvider>
 
        <Provider store={store}>
-        <Mysterious/>
-          {children}
+        
+       <LayoutWrapper> {children}</LayoutWrapper>
         </Provider>
        </SessionProvider>
-        <Footer/>
+       
 
 
       </body>

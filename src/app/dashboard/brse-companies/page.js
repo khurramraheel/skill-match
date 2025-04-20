@@ -52,18 +52,70 @@ export default function Companies() {
   
     
     return (
-        <div className= "  bg-light bg-gradient main-content container-fluid mb-5 px-0">  
+        <div className= "  bg-light bg-gradient mt-2 container-fluid mb-5 ">  
         {/* <h1 className="text-white">Find your dream Companies </h1> */}
        
+        
+        <div className='row '>
+  <div className='col-8'></div>
+
   
+  <div className='col-md-4 '>
+<div className="card ms-5 " style={{width: "18rem"}}>
+  <div className="card-body mb-0">
+
+    <div className='row'>
+<div className='col-3 me-0'>
+<i class="bi bi-person-circle fs-2 text-body-secondary "></i>
+
+</div>
+<div className='col-5  m-0'>
+    <h6 className="fw-bold mb-0 ">Hamza9121</h6>
+    <p className=" ">Candidate</p>
+ 
+
+</div>
+
+<div className='col-2'>
+<i class="bi bi-bell fs-5 mt-3 fw-bold "></i>
+</div>
+<div className='col-2'>
+  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    </button>
+    <div class="dropdown">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    <li><a class="dropdown-item" href="#">Setting</a></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
+
+</div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
      <div className="fs-2 fw-bold mb-3">
    
     Browse Companies
    
      </div>
   
-        <div className='text-center bg-secondary  rounded-4 ' style={{paddingTop:"50px", maxWidth: '100%', height:"200px" }}>
-            <div className='border border-1px ms-3  px-10 py-4 row d-flex flex-row gap-4 align-items-center justify-content-center ' style={{width:"95%"}}>
+        <div className='text-center   rounded-4 ' style={{backgroundColor:"white", paddingTop:"50px", maxWidth: '100%', height:"200px" }}>
+            <div className='border border-1px ms-3   px-7 py-4 row d-flex flex-row gap-4 align-items-center justify-content-center ' style={{width:"95%"}}>
 
           <div className=' d-flex flex-row gap-2 align-items-center justify-content-center col-md-3 col-xs-3'
           style={{borderRight:"1px solid grey", }}>
@@ -108,15 +160,13 @@ export default function Companies() {
   
           <div className='col-md-2 col-xs-2'><button className='rounded-pill p-2 bg-primary text-white fw-bold border-0' style={{ width: '100px' }}>Search</button></div>
           </div>
+          <div>
+            <p className='text-seondary text-body-secondary text-start ms-3 mt-2'>Popular : Twitter, Microsoft, Apple, Facebook</p>
+          </div>
         </div>
-        <div className='text-start vw-90 row px-5  text-white  mt-2 '><div className='col-8' style={{width:"100%"}}>
-            <p className='text-start'>Popular : UI Designer, UX Researcher, Android, Admin</p>
-          </div><div className='col-md-1 col-xs-1'></div>
-          
-          <div className='col-4'></div>    
-          <div className='col-3'></div></div>
+       
       
-         <div className="main-content container-fluid mb-5 px-5">   
+         <div className="main-content container-fluid mb-5 mt-3">   
             <div className='d-flex justify-content-between align-items-start'>
                 <div className='col-md-3 p-3'>
                     <div className="d-flex justify-content-between align-items-center cursor-pointer" onClick={toggleIndustry}>
@@ -160,7 +210,7 @@ export default function Companies() {
                     )}
                 </div>
 
-                <div className='col-md-9 ps-5'>
+                <div className='col-md-9 ps-2'>
                     <h3 className='mb-3 fw-bold'>All Companies</h3>
                     <div className='d-flex justify-content-end me-5 mb-4'>
                         <button className={`btn ${!isGrid ? "btn-primary" : "btn-light"}`} onClick={toggleView}>List</button>
@@ -172,7 +222,7 @@ export default function Companies() {
                         filteredCompanies.map((company, index) => (
                             <div key={index} className={`${isGrid ? 'col-md-6' : ''}`}>
                                 <div className='position-relative border p-3 my-4 d-flex flex-column' 
-                                  style={{ minHeight: '300px', maxWidth: '950px', padding: '10px' }}
+                                  style={{ minHeight: '300px', maxWidth: '950px', padding: '10px',backgroundColor:"white" }}
 >
 
                                     <span className='position-absolute top-0 end-0 mt-4 me-4 p-2 fs-6 badge bg-gray border' style={{ color: "#2dc29e" }}>
@@ -182,7 +232,7 @@ export default function Companies() {
                                     <h3 className='ms-2  fw-bold mt-2'>{company.name}</h3>
 
                                     {company.description ? (
-                                        <p className='p-2 mb-2 fs-4 fw-light'>{company.description}</p>
+                                        <p className='p-2 mb-2 fs-5 text-body-secondary'>{company.description}</p>
                                     ) : (
                                         <div className='mb-2'></div> 
                                     )}
