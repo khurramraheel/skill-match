@@ -19,13 +19,21 @@ export default function LoginForm() {
   const router = useRouter();
 
 
-
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get("/api/me", { withCredentials: true });
-
-      dispatch(setUser(res.data.user));
+      try {
+        const res = await axios.get("/api/me", { withCredentials: true });
+        dispatch(setUser(res.data.user));
+      } catch (error) {
+        if (error.response?.status === 401) {
+          console.log("User not authenticated");
+          // Do nothing or redirect to login
+        } else {
+          console.error("Error fetching user:", error);
+        }
+      }
     };
+  
     fetchUser();
   }, [dispatch]);
   

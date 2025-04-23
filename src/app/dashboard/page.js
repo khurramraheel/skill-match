@@ -48,12 +48,12 @@ export default function DashboardPage() {
   <div className="card-body mb-0">
 
     <div className='row'>
-<div className='col-3 me-0'>
+<div className='col-2 me-0'>
 <i class="bi bi-person-circle fs-2 text-body-secondary "></i>
 
 </div>
-<div className='col-5  m-0'>
-    <h6 className="fw-bold mb-0 ">Hamza9121</h6>
+<div className='col-6  ms-0'>
+    <h6 className="fw-bold mb-0 ">{user?.name || getCleanUsername(user?.email)}</h6>
     <p className=" ">Candidate</p>
  
 
