@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function DashboardPage() {
   useEffect(() => {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
+    
   }, []);
   
 
@@ -38,6 +39,70 @@ export default function DashboardPage() {
 
   return (
     <div className="container-fluid"> 
+<div className='row mt-3'>
+  <div className='col-8'></div>
+
+  
+  <div className='col-md-4 '>
+<div className="card ms-5 " style={{width: "18rem"}}>
+  <div className="card-body mb-0">
+
+    <div className='row'>
+<div className='col-2 me-0'>
+<i class="bi bi-person-circle fs-2 text-body-secondary "></i>
+
+</div>
+<div className='col-6  ms-0'>
+    <h6 className="fw-bold mb-0 ">{user?.name || getCleanUsername(user?.email)}</h6>
+    <p className=" ">Candidate</p>
+ 
+
+</div>
+
+<div className='col-2'>
+<i class="bi bi-bell fs-5 mt-3 fw-bold "></i>
+</div>
+<div className='col-2'>
+  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    </button>
+    <div class="dropdown">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    <li><a class="dropdown-item" href="#">Setting</a></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
+
+</div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+<div className='row mt-3'>
+<div className='col-2'>
+  <p className='fw-bold fs-2'>Dashboard</p>
+</div>
+<div className='col-10'>
+
+  <a href='/dashboard/findjobs' className='btn rounded-3 text-white p-3 fs-5 fw-semibold' style={{backgroundColor:"#336E63", width:"100%"}}>Find Jobs <i class="bi bi-search fw-bold ms-1 fs-5"></i></a>
+</div>
+</div>
+
+
+
+
       <div className="row">
         {/* Sidebar */}
     
@@ -60,8 +125,8 @@ export default function DashboardPage() {
                   <div className='col-8'>
 
                   </div>
-                  <div className='col-4'>
-                  <img src="/images/images.png" height="40px" width="40px" ></img>
+                  <div className='col-4 mb-0'>
+                  <i class="bi bi-bar-chart-fill fs-1 text-body-secondary" ></i>
                   </div>
 
                 </div>
@@ -98,14 +163,21 @@ export default function DashboardPage() {
       
             <div className="col-md-8" style={{height:'100px'}}>
               <div className="card  p-4 "  >
-                <h5 >Jobs Applied Status</h5>
+                <h5 className='mb-4'>Jobs Applied Status</h5>
 
-<div className='row mt-4'>
-  <div className='col-5'>
-    <img src='/images/images (1).png' height="80%" width="80%"></img>
+<div className='row '>
+  <div className='col-4 mt-4 mb-4'>
+
+
+  <div className="progress-circle" >
+  <span className="progress-text">25%</span>
+</div>
+
+
+
   </div>
    
-   <div className='col-7'>
+   <div className='col-8 mt-3'>
 
 
 
@@ -124,7 +196,7 @@ export default function DashboardPage() {
  <h5 className='fw-bold '>0%</h5>
 </div>
 
-<div>
+<div >
 <h5 className='text-body-secondary'>
     Interviewed
    </h5>
@@ -134,10 +206,10 @@ export default function DashboardPage() {
 </div>
 
 
-   <div className='mt-8'>
+   <div className='mt-8 mt-3 '>
 
-<p className='text-success fw-semibold '>
-View All Applications  <i class="bi bi-arrow-right ms-2"></i>
+<p className='text-success fw-semibold  mb-1'>
+View All Applications  <i className="bi bi-arrow-right ms-2"></i>
 </p>
 
    </div>

@@ -123,3 +123,38 @@ select option:hover{
   background-color: #336E63;
   color: #fff !important;
 }
+
+
+
+
+
+
+.progress-circle {
+  --size: 150px;
+  --thickness: 20px;
+  --bg: #e6e6e6;
+  --color: #28a745; /* Bootstrap success green */
+  --value: 0;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    conic-gradient(var(--color) calc(var(--value) * 1%), var(--bg) 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+}
+
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--size) - var(--thickness) * 2);
+  height: calc(var(--size) - var(--thickness) * 2);
+  border-radius: 50%;
+  background-color: #fff;
+}

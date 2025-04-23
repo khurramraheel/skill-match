@@ -2,6 +2,7 @@
 
 import Hero from '@/components/jobs/hero'
 import { useEffect, useState } from 'react';
+import { BsGlobeAmericas } from 'react-icons/bs';
 
 
 export default function Page() {
@@ -74,60 +75,117 @@ export default function Page() {
           
 
             
-            <div className="main-content container-fluid mt-5 mb-5 px-5">
+            <div className="mt-2 container-fluid  px-1 bg-light bg-gradient" >
+
+            <div className='row mt-2'>
+  <div className='col-8'></div>
+
+  
+  <div className='col-md-4 '>
+<div className="card ms-5 " style={{width: "18rem"}}>
+  <div className="card-body mb-0">
+
+    <div className='row'>
+<div className='col-3 me-0'>
+<i class="bi bi-person-circle fs-2 text-body-secondary "></i>
+
+</div>
+<div className='col-5  m-0'>
+    <h6 className="fw-bold mb-0 ">Hamza9121</h6>
+    <p className=" ">Candidate</p>
+ 
+
+</div>
+
+<div className='col-2'>
+<i class="bi bi-bell fs-5 mt-3 fw-bold "></i>
+</div>
+<div className='col-2'>
+  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    </button>
+    <div class="dropdown">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    <li><a class="dropdown-item" href="#">Setting</a></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
+
+</div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
 
     <div className='mb-3'>
+
         <h1 className='fw-bold'>
         Find Jobs
 
         </h1>
     </div>
+  <div className='text-center   rounded-4 ' style={{backgroundColor:"white", paddingTop:"50px", maxWidth: '100%', height:"200px" }}>
+            <div className='border border-1px ms-3   px-7 py-4 row d-flex flex-row gap-4 align-items-center justify-content-center ' style={{width:"95%"}}>
 
- <div className=' border border-1 px-3 py-4 rounded-3 d-flex flex-row vw-100 gap-4 align-items-center justify-content-center row' style={{ maxWidth: '100%' }}>
-        <div className='d-flex flex-row gap-2 align-items-center justify-content-center col-md-3 col-xs-3'
-        style={{borderRight:"1px solid grey", }}>
-          <img
-            src="/find-jobs/search.svg"
+          <div className=' d-flex flex-row gap-2 align-items-center justify-content-center col-md-3 col-xs-3'
+          style={{borderRight:"1px solid grey", }}>
+            <img
+              src="/find-jobs/search.svg"
+              alt="" />
+              <div style={{borderBottom:"1px solid grey",opacity:"0.5"}}>
+            <input
+              type="text"
+              placeholder="Companny Name or keyword "
+              className="border-0 opacity-75 p-" 
+              style={{ outline: 'none',}}
+            /></div>
+          </div>
+  
+          <div className='d-flex align-items-center justify-content-center col-md-3 col-xs-3' 
+          style={{borderRight:"1px solid grey"}}> 
+            <BsGlobeAmericas style={{ height: '20px', width: '20px' }} />
+            <div style={{borderBottom:"1px solid grey",opacity:"0.5"}}>
+            <select name="" id="" className='border-0 opacity-50 px-3'
+             style={{ outline: 'none', }}>
+              <option value="">Choose a Country</option>
+              <option value="" >AUSTRALIA</option>
+              <option value="" >INDIA</option>
+              <option value="" >PAKISTAN</option>
+              <option value="" >GERMANY</option>
+            </select></div>
+            </div>
+               
+          <div className='d-flex  align-items-center justify-content-center col-md-3 col-xs-3'> <img
+            src="/find-jobs/location.svg"
             alt="" />
             <div style={{borderBottom:"1px solid grey",opacity:"0.5"}}>
-          <input
-            type="text"
-            placeholder="Job title or keyword "
-            className="border-0 opacity-50 p-" 
-            style={{ outline: 'none',}}
-          /></div>
+            <select name="" id="" className='border-0 px-3 opacity-50 ' style={{ outline: 'none', }}>
+              <option>Choose a City</option>
+              <option value="Lahore" >Lahore</option>
+              <option value="FAISALABAD" >FAISALABAD</option>
+              <option value="MULTAN" >MULTAN</option>
+              <option value="KARACHI" >KARACHI</option>
+            </select></div>
+            </div>
+  
+          <div className='col-md-2 col-xs-2'><button className='rounded-pill p-2 bg-primary text-white fw-bold border-0' style={{ width: '100px' }}>Search</button></div>
+          </div>
+          <div>
+            <p className='text-seondary text-body-secondary text-start ms-3 mt-2'>Popular : Twitter, Microsoft, Apple, Facebook</p>
+          </div>
         </div>
-
-        <div className='d-flex align-items-center justify-content-center col-md-3 col-xs-3' 
-        style={{borderRight:"1px solid grey"}}> 
-          {/* <BsGlobeAmericas style={{ height: '20px', width: '20px' }} /> */}
-          <div style={{borderBottom:"1px solid grey",opacity:"0.5"}}>
-          <select name="" id="" className='border-0 opacity-25 px-3'
-           style={{ outline: 'none', }}>
-            <option value="">Choose a Country</option>
-            <option value="" >AUSTRALIA</option>
-            <option value="" >INDIA</option>
-            <option value="" >PAKISTAN</option>
-            <option value="" >GERMANY</option>
-          </select></div>
-          </div>
-
-        <div className='d-flex  align-items-center justify-content-center col-md-3 col-xs-3'> <img
-          src="/find-jobs/location.svg"
-          alt="" />
-          <div style={{borderBottom:"1px solid grey",opacity:"0.5"}}>
-          <select name="" id="" className='border-0 px-3 opacity-25 ' style={{ outline: 'none', }}>
-            <option>Choose a City</option>
-            <option value="Lahore" >Lahore</option>
-            <option value="FAISALABAD" >FAISALABAD</option>
-            <option value="MULTAN" >MULTAN</option>
-            <option value="KARACHI" >KARACHI</option>
-          </select></div>
-          </div>
-
-        <div className='col-md-2 col-xs-2'><button className='rounded-pill p-2 bg-primary text-white fw-bold border-0' style={{ width: '100px' }}>Search</button></div>
-      </div>
-
 
 
 
@@ -218,7 +276,7 @@ export default function Page() {
                             {filteredCompanies.length > 0 ? (
                                 filteredCompanies.map((company, index) => (
                                     <div key={index} className=  {`${isGrid ? 'col-md-6' : ''}`}>
-                                        <div className='position-relative border p-3 my-4 d-flex flex-column' style={{ minHeight: '150px', padding: '10px' }}>
+                                        <div className='position-relative border p-3 my-4 d-flex flex-column' style={{ minHeight: '150px', padding: '10px', backgroundColor:"white"}}>
                                          
                                             <div className="d-flex align-items-center">
                                                 <img src={company.logo} alt={company.tile} className='ms-2 my-2 ' height="60"  width="60" style={{borderRadius:"50px"}}/>

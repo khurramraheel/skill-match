@@ -19,13 +19,21 @@ export default function LoginForm() {
   const router = useRouter();
 
 
-
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get("/api/me", { withCredentials: true });
-
-      dispatch(setUser(res.data.user));
+      try {
+        const res = await axios.get("/api/me", { withCredentials: true });
+        dispatch(setUser(res.data.user));
+      } catch (error) {
+        if (error.response?.status === 401) {
+          console.log("User not authenticated");
+          // Do nothing or redirect to login
+        } else {
+          console.error("Error fetching user:", error);
+        }
+      }
     };
+  
     fetchUser();
   }, [dispatch]);
   
@@ -81,9 +89,9 @@ export default function LoginForm() {
 
   return (
 
-    <div className="mt-2"> 
+    <div > 
      <ToastContainer position="top-center" autoClose={3000} hideProgressBar ></ToastContainer>
-    <div className=" vw-100 vh-100 d-flex align-items-center justify-content-center" style={{ paddingTop:"5rem!important" }}>
+    <div className=" vw-100  d-flex align-items-center justify-content-center">
       <div className="row w-100 shadow rounded-3 overflow-hidden" style={{ backgroundColor: "#f8f9fa" }}>
         {/* Left Side Image */}
         <div
