@@ -8,7 +8,7 @@ import Features from "@/components/Features"
 import Trust from "@/components/Trust"
 export default function HowItWorks() {
   return (
-    <main className="how-it-works mt-5">
+    <main className="how-it-works ">
         {/* Hero Section */}
         <section className="hero">
           <div className="container">

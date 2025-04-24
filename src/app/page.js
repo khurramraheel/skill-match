@@ -4,6 +4,7 @@ import Crousal from "@/components/home/Crousal";
 import StatsBanner from "@/components/home/StatsBanner";
 import SkillAssessment from "@/components/home/Skills";
 import Report from "@/components/home/CustomReports";
+import Cta from "@/components/how-it-works/Cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Report />
       <StatsBanner />
       <Crousal/>
+      <Cta/>
+      
     </>
   );
 }

@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import styles from "./skills.module.css";
 
@@ -65,9 +66,12 @@ export default function SkillAssessment() {
           </div>
 
           {/* Button */}
-          <button className={`btn btn-primary mt-3 px-3 py-2 fw-semibold shadow-sm ${styles.btn}`}>
-            Learn More →
-          </button>
+          <button
+                          className={`btn btn-primary mt-3 px-3 py-2 fw-semibold shadow-sm ${styles.btn}`}
+                          onClick={() => window.location.href = '/'}
+                          >
+                          Learn More →
+                          </button>
         </div>
       </div>
     </div>

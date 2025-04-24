@@ -1,54 +1,46 @@
 {
-  "name": "skill-match-main",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@reduxjs/toolkit": "^2.6.1",
-    "axios": "^1.8.4",
-    "@hookform/resolvers": "^4.1.2",
-    "@next/font": "^14.2.15",
-    "axios": "^1.8.3",
-    "bcrypt": "^5.1.1",
-    "bcryptjs": "^3.0.2",
-    "bootstrap": "^5.3.3",
-    "dotenv": "^16.4.7",
-    "framer-motion": "^12.4.7",
-    "jsonwebtoken": "^9.0.2",
-    "lucide-react": "^0.479.0",
-    "mongoose": "^8.12.1",
-    "next": "15.1.7",
-    "next-auth": "^4.24.11",
-    "nodemailer": "^6.10.0",
-    "react": "^19.1.0",
-    "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0",
-    "react-feather": "^2.0.10",
-    "react-hook-form": "^7.54.2",
-    "react-icons": "^5.5.0",
-    "react-phone-input-2": "^2.15.1",
-
-    "sass": "^1.85.1",
-    "yup": "^1.6.1",
-
-
-
-    "react-redux": "^9.2.0",
-    "react-toastify": "^11.0.5",
-    "sass": "^1.85.1",
-    "yup": "^1.6.1"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.7"
-  }
+    "name": "skill-match-main",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.7.2",
+        "@fortawesome/free-solid-svg-icons": "^6.7.2",
+        "@fortawesome/react-fontawesome": "^0.2.2",
+        "@hookform/resolvers": "^4.1.2",
+        "@reduxjs/toolkit": "^2.6.1",
+        "axios": "^1.8.4",
+        "bcrypt": "^5.1.1",
+        "bcryptjs": "^3.0.2",
+        "bootstrap": "^5.3.3",
+        "dotenv": "^16.4.7",
+        "framer-motion": "^12.4.7",
+        "jsonwebtoken": "^9.0.2",
+        "lucide-react": "^0.479.0",
+        "mongoose": "^8.12.1",
+        "next": "^15.3.1",
+        "next-auth": "^4.24.11",
+        "nodemailer": "^6.10.0",
+        "react": "^19.1.0",
+        "react-bootstrap": "^2.10.9",
+        "react-dom": "^19.0.0",
+        "react-feather": "^2.0.10",
+        "react-hook-form": "^7.54.2",
+        "react-icons": "^5.5.0",
+        "react-phone-input-2": "^2.15.1",
+        "react-redux": "^9.2.0",
+        "react-toastify": "^11.0.5",
+        "sass": "^1.85.1",
+        "yup": "^1.6.1"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "eslint": "^9",
+        "eslint-config-next": "15.1.7"
+    }
 }

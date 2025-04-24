@@ -3,6 +3,7 @@ import Blog from "@/components/blog/page";
 import Testimonials from "@/components/slider/page";
 import Slider from "@/components/slider/page";
 import Cards from "@/components/cards/page";
+import Cta from "@/components/how-it-works/Cta";
 export default function Home() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function Home() {
  <Container/>
  <Slider/>
  <Cards/>
+ <Cta/>
     </div>
   
  );

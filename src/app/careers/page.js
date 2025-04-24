@@ -21,7 +21,7 @@ export default function Page() {
     ];
 
     return (
-        <div className="pt-5 px-md-0">
+        <div >
             {/* ✅ HERO SECTION */}
             <div className="container-fluid d-flex flex-column align-items-center justify-content-center gap-4 bg-primary text-white text-center py-3"
                 style={{

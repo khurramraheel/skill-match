@@ -88,7 +88,7 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="container-fluid p-0 pt-5">
+    <div className="container-fluid p-0 ">
       <div className="green-header">
         <div className="container text-center text-white">
           <div className="pt-5 pb-4">

@@ -40,7 +40,9 @@ const StatsBanner = () => {
 
         <div className="row mt-4">
           <div className="col-12 text-center">
-            <button className={`btn btn-light rounded-pill px-5 py-3 fs-6 fw-semibold text-dark ${styles.btn}`}>
+            <button className={`btn btn-light rounded-pill px-5 py-3 fs-6 fw-semibold text-dark ${styles.btn}`}
+                            onClick={() => window.location.href = '/login'}
+>
               Start Free Trial
             </button>
           </div>

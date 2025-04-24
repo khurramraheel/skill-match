@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./customreports.module.css";
 
@@ -57,13 +59,16 @@ export default function Report() {
             </div>
           </div>
 
-          {/* Button */}
-          <button className={`btn btn-primary mt-3 px-3 py-2 fw-semibold shadow-sm ${styles.btn}`}>
-            Learn More →
-          </button>
-        </div>
+         { /* Button */}
+                <button
+                className={`btn btn-primary mt-3 px-3 py-2 fw-semibold shadow-sm ${styles.btn}`}
+                onClick={() => window.location.href = '/'}
+                >
+                Learn More →
+                </button>
+              </div>
 
-        {/* Right Side - Image */}
+              {/* Right Side - Image */}
         <div className="col-lg-6 d-flex justify-content-center order-lg-2 order-1">
           <Image
             src="/home/reports/custom.svg"

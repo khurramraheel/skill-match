@@ -8,6 +8,7 @@ import TrustedCompanies from "../../components/TrustedCompanies";
 import { vector1, vector2 } from "../../../public/contact";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Cta from "@/components/how-it-works/Cta";
 
 const Contact = () => {
   const {
@@ -305,6 +306,7 @@ const Contact = () => {
         </div>
       </main>
       <TrustedCompanies />
+      <Cta/>
     </div>
   );
 };

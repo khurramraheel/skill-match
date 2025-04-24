@@ -3,7 +3,7 @@ import "@/app/custom-bootstrap.scss";
 
 export default function page() {
   return (
-    <div className='pt-5'>
+    <div >
       <div className='bg-primary vh-40 d-flex flex-column align-items-center justify-content-center text-center' style={{ height: "40vh" }}>
         <h5 className='mt-5 bg-white px-4 py-2 rounded-5 fw-bold'>Last Update: 08 Oct 2024</h5>
         <h1 className='mt-2 text-white fw-bolder'>Terms and Conditions</h1>

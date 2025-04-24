@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  margin-top: 58px;
+  /* margin-top: 58px; */
   height: 110vh;
   display: flex;
   flex-direction: column;
