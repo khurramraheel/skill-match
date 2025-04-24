@@ -112,6 +112,7 @@ export default function page() {
               <li>Email: support@skillmatch.com</li>
             </ul>
           </li>
+
         </ol>
       </div>
     </div>
