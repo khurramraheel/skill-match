@@ -58,12 +58,12 @@ const Contact = () => {
               >
                 Get in touch.
               </h1>
-              <p className="mb-4 fw-bold">
+              <p className="mb-4 fs-3 ">
                 If you have any questions about the subscription or are not sure
                 which plan is right for you, contact our team and let&apos;s
                 schedule a call.
               </p>
-              <p className="mb-5 fw-bold">
+              <p className="mb-5 fs-3 ">
                 If you&apos;re a current customer looking for support, please
                 contact
                 <a
@@ -74,9 +74,9 @@ const Contact = () => {
                 </a>
               </p>
 
-              <div className="mt-5">
+              <div className="mt-5 fs-3">
                 <h5 className="mb-4">Looking for something else ?</h5>
-                <div className="d-flex flex-column gap-2">
+                <div className="d-flex fw-bold flex-column gap-2">
                   <Link href="/" className="text-white text-decoration-none">
                     Product &gt;
                   </Link>

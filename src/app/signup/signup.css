@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+    button img {
+      height: 30px !important;
+      width: 30px !important;
+    }
+    .bg-primary h1 {
+      font-size: 2.5rem !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    button img {
+      height: 24px !important;
+      width: 24px !important;
+    }
+    button span {
+      display: none !important;
+    }
+    .bg-primary p {
+      display: none !important;
+    }
+    .bg-primary h1 {
+      font-size: 2rem !important;
+    }
+  }
+  
